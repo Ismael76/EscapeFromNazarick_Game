@@ -5,26 +5,25 @@ using UnityEngine;
 public class PlatformAttach : MonoBehaviour
 {
 
-    public GameObject player1;
+    public GameObject player;
 
 
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject == player1)
+        if (other.gameObject == player)
         {
-
-            player1.transform.parent = transform;
+            player.transform.parent = transform;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
 
-        if (other.gameObject == player1)
+        if (other.gameObject == player)
         {
 
-            player1.transform.parent = null;
+            player.transform.parent = null;
         }
 
     }
