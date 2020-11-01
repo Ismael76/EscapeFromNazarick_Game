@@ -13,7 +13,7 @@ public class PlatformAttach : MonoBehaviour
 
         if (other.gameObject == player)
         {
-            player.transform.parent = transform;
+            player.transform.parent = transform; //Attach player position to the object
         }
     }
 
@@ -23,7 +23,7 @@ public class PlatformAttach : MonoBehaviour
         if (other.gameObject == player)
         {
 
-            player.transform.parent = null;
+            player.transform.parent = null; //When player moves off object de-attach
         }
 
     }
