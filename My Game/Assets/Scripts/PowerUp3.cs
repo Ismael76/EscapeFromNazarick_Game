@@ -17,21 +17,22 @@ public class PowerUp3 : MonoBehaviour
     }
     IEnumerator PickUp(Collider player)
     {
-        //Effect when power up picked up
+        //Effect When Power Up Is Picked Up
         Instantiate(pickUpEffect, transform.position, transform.rotation);
 
-        //Apply power up to player
+        //Applies Power Up To The Player
         PlayerController speed = player.GetComponent<PlayerController>(); //How to reference a variable/property in a different script
         speed.moveSpeed = 15f;
 
-        //Hides the powerup
+        //Hides The Powerup, So It Can No Longer Be Obtained
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
-        //Wait x amount of seconds and then reverse powerup effect
+        //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
         yield return new WaitForSeconds(5f);
         speed.moveSpeed = 7f;
 
+        //Destroys PowerUp
         Destroy(gameObject);
 
     }

@@ -1,38 +1,62 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth; //Player max health
-    public int playerHealth; //Player current health
+    public int maxHealth = 5; //The Players Maximum Health They Can Attain
+    public int playerHealth; //The Players Current Health In Game
+
+    public int numOfHearts; //The Players Hearts Which Indicates The Amount Of Health They Have
+
+    public Image[] hearts; //Array Used To Count Hearts
+    public Sprite fullHeart, emptyHeart; //Sprites Used To Represent Hearts
 
     public PlayerController player;
 
-    public float invincibilityLength; //How long player should be invicible when damaged
-    private float invincibilityCounter; //Used to count down invincibility
+    public float invincibilityLength; //How Long The Player Should Be Invincible For When Damaged
+    private float invincibilityCounter; //Used To Count Down The Players Invincibility Time
 
     public Renderer playerRenderer;
-    private float flashCounter; //Used to count down player object flash when damaged
-    public float flashLength = 0.2f; //Length of flash
+    private float flashCounter; //Used To Count Down How Long The Player Object Should Be Flashed When Damaged To Create A Damage Effect
+    public float flashLength = 0.2f; //The Length Of The Flash
 
-    private bool isRespawning; //Check if player is respawning
-    private Vector3 respawnPoint; //Respawn point on the map for the player
+    private bool isRespawning; //Used To Check If Player Is Respawning
+    private Vector3 respawnPoint; //Respawn Point For The Player
 
-    public float respawnLength; //Length of the respawn
+    public float respawnLength; //Length Of The Respawn
 
     void Start()
     {
-        playerHealth = maxHealth; //Sets current health to max health at the start of the game
+        playerHealth = maxHealth; //Setting Player Health To Maximum Health When The Game Begins
 
-        respawnPoint = player.transform.position; //Respawn point will be where the player starts off when the game starts
+        respawnPoint = player.transform.position; //Positioning Player At The Respawn Point When Game Begins
 
     }
 
 
     void Update()
     {
-        //Checks if player is invincible, if it is it will prevent damage and show player object model flashing, else it will damage the player and lead to play object model flashing to show it has been damaged
+        // This Part Of The Code Checks Players Health With The Hearts Displayed On Screen To Represent Correct Health
+        if (playerHealth > numOfHearts) {
+            playerHealth = numOfHearts;
+        }
+        for (int i = 0; i < hearts.Length; i++)
+            {
+                if (i < playerHealth) {
+                    hearts[i].sprite = fullHeart;
+                } else {
+                    hearts[i].sprite = emptyHeart;
+                }
+                if (i < numOfHearts) {
+                    hearts[i].enabled = true;
+                } else {
+                    hearts[i].enabled = false;
+
+                }
+            }
+        //This Checks If The Player Is Invincible, If They Are, It Will Prevent Further Damage & Show Player Object Model Flashing, Else It Will Damage The Player & Also Flashing The Player To Show Damage Dealt
         if (invincibilityCounter > 0)
         {
 
@@ -57,16 +81,17 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    //When player gets damaged it will reduce current health and then knockback player whilst taking into account the player object flash to show it has been damaged
+    //When The Player Gets Damaged It Will Reduce Current Health & Then Knockback The Player
     public void PlayerDamaged(int damage, Vector3 direction)
     {
+
         if (invincibilityCounter <= 0)
         {
             playerHealth -= damage;
 
             if (playerHealth <= 0)
             {
-                Respawn(); //When player health reaches 0 it will respawn the player
+                Respawn();
 
             }
 
@@ -81,13 +106,13 @@ public class PlayerHealth : MonoBehaviour
 
                 flashCounter = flashLength;
 
-            }
-        }
+                }
 
+            }
 
     }
 
-    //If player is respawning
+    //If The Player Is Respawning
     public void Respawn()
     {
 
@@ -98,7 +123,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    //Player will be reset back to respawn point, player model will be inactive when it dies and reactive when it respawns
+    //Player Will Be Reset Back To Respawn Point, Player Model Will Be Inactive When They Die & Will Only Reactivate When They Respawn
     public IEnumerator RespawnCo()
     {
         GameObject player = GameObject.Find("Player");
@@ -122,7 +147,7 @@ public class PlayerHealth : MonoBehaviour
         flashCounter = flashLength;
     }
 
-    //Restores health of player
+    //Restoring The Health Of The Player
     public void RestoreHealth(int healAmount)
     {
 

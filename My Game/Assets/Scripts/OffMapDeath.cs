@@ -5,8 +5,9 @@ using UnityEngine;
 public class OffMapDeath : MonoBehaviour
 {
 
-    public int damageDealt = 100;
+    public int damageDealt = 5;
 
+    //If Players Jump Off The Map Or Fall Off, They Will Be Dealt Maximum Damage Which Is Triggered By Falling Off
     void OnTriggerEnter(Collider other)
     {
 

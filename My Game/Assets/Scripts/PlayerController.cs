@@ -5,27 +5,27 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed; //Player movement speed
+    public float moveSpeed; //The Speed Of The Players Movement
 
-    public float jumpForce; //Player jumping ability
+    public float jumpForce; //The Players Jumping Prowess
 
-    public CharacterController controller; //Controller used for player movement
+    public CharacterController controller;
 
-    public static Vector3 moveDirection; //Player movement
+    public static Vector3 moveDirection; //Player Movement
 
-    public float gravityScale; //Scale of gravity force on player, Vector3 uses x, y & z coordinates of objects
+    public float gravityScale; //Scale Of The Gravity Force On The Player
 
-    public Animator characterAnim; //Animation of character
+    public Animator characterAnim; //Used For Certain Animations Of The Character
 
-    public Transform piv; //Camera pivot
+    public Transform piv; //Camera Pivot
 
-    public float rotationSpeed; //Rotation speed player
+    public float rotationSpeed; //Rotation Speed Of The Player
 
-    public GameObject player; //Player object
+    public GameObject player; //Player Object/Model
 
-    public float knockBackPower; //Power of the knockback force
-    public float knockBackTime; //How far character should be knocked back based on time
-    private float knockBackCounter; //Knockback counter used to check if player is not already knocked back and how long they should be knocked back for
+    public float knockBackPower; //Power Of The Knockback Force On The Player (How Far They Are Knocked Back)
+    public float knockBackTime; //How Far Character Should Be Knocked Back Based On Time (How Long They Are In The Air)
+    private float knockBackCounter; //Knockback Counter Used To Check If Player Is Not Already Knocked Back & How Long They Should Be Knocked Back For
 
     void Start()
     {
@@ -35,59 +35,58 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime); //Inbuilt Graphity Physics On Movement Of The Player
+        controller.Move(moveDirection * Time.deltaTime); //Moves Character Using Character Controller & The Vectors Given With 'moveDirection' Variable
+
+        //Character Animations Depending On Character Positioning/Actions
+        characterAnim.SetBool("isGrounded", controller.isGrounded);
+        characterAnim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
+
+        if (knockBackCounter <= 0)
         {
 
-            if (knockBackCounter <= 0)
-            {
 
+            float yStore = moveDirection.y;
+            moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal")); //Movement Of Character
+            moveDirection = moveDirection.normalized * moveSpeed;
+            moveDirection.y = yStore;
 
-                float yStore = moveDirection.y;
-                moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal")); //transform.forward will move the object forward based on direction it is facing, transform.right moves character left or right 
-                moveDirection = moveDirection.normalized * moveSpeed; //Normalized smoothens the movement when the character is moving diagonally so moving forward and right, forward and left, backwards and right, backwards and left at the same time
-                moveDirection.y = yStore;
+            //If Player Is On The Ground, Then When They Jump The Player Should Jump With The Force They Are Given
+            if (controller.isGrounded)
+            { 
 
-                if (controller.isGrounded)
-                { //Checks if player is on the ground
+                moveDirection.y = 0; 
 
-                    moveDirection.y = 0; //Sets gravity to 0 if player is on the ground
+                if (Input.GetButtonDown("Jump"))
+                {
 
-                    if (Input.GetButtonDown("Jump"))
-                    {
-
-                        moveDirection.y = jumpForce; //Player jump
-
-                    }
+                    moveDirection.y = jumpForce; 
 
                 }
-            }
-            else
-            {
-
-                knockBackCounter -= Time.deltaTime;
 
             }
+        }
+        else
+        {
 
-            moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime); //Physics.gravity is the default gravity physics built into unity
-            controller.Move(moveDirection * Time.deltaTime); //Moves character using character controller and the vectors given with moveDirection variable
-
-            characterAnim.SetBool("isGrounded", controller.isGrounded);
-            characterAnim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
-
-            //Player movement in different direction following camera direction
-            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-            {
-
-                transform.rotation = Quaternion.Euler(0, piv.rotation.eulerAngles.y, 0);
-                Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z));
-                player.transform.rotation = Quaternion.Slerp(player.transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
-
-            }
-
+            knockBackCounter -= Time.deltaTime;
 
         }
+
+        //Player Movement In Different Direction Following Camera Direction
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+
+            transform.rotation = Quaternion.Euler(0, piv.rotation.eulerAngles.y, 0);
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z));
+            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+
+        }
+
+
     }
 
-    public void KnockBack(Vector3 knockbackDirection) //Knocks back player when it runs into an enemy or object that is dangerous
+    public void KnockBack(Vector3 knockbackDirection) //Knocks Back The Player When They Run Into An Enemy Or Object That Deals Damage
     {
 
         knockBackCounter = knockBackTime;
