@@ -6,6 +6,8 @@ public class PowerUp : MonoBehaviour
 {
 
     public GameObject pickUpEffect;
+    public GameObject bottleEffect1;
+    public GameObject bottleEffect2;
 
     void OnTriggerEnter(Collider other)
     {
@@ -29,6 +31,8 @@ public class PowerUp : MonoBehaviour
 
 
         //Hides The Powerup, So It Can No Longer Be Obtained
+        Destroy(bottleEffect1);
+        Destroy(bottleEffect2);
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 

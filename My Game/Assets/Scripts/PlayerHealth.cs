@@ -27,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
 
     public float respawnLength = 1; //Length Of The Respawn
 
+    public GameObject gameOver;
+    public static bool isGameOver;
+
     void Start()
     {
         maxHealth = 5;
@@ -97,7 +100,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (playerHealth <= 0)
             {
-                Respawn();
+                GameOver();
 
             }
 
@@ -118,8 +121,16 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void GameOver(){
+
+        gameOver.SetActive(true);
+        Time.timeScale = 0f;
+        isGameOver = true;
+
+    }
+
     //If The Player Is Respawning
-    public void Respawn()
+    /*public void Respawn()
     {
 
         if (!isRespawning)
@@ -151,7 +162,7 @@ public class PlayerHealth : MonoBehaviour
         playerRenderer.enabled = false;
         flashCounter = flashLength;
 
-    }
+    } */
 
     //Restoring The Health Of The Player
     public void RestoreHealth(int healAmount)

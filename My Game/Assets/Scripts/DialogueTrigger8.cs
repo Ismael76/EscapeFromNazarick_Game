@@ -17,6 +17,9 @@ public class DialogueTrigger8 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (panel9 == null) {
+            return;
+        }
         Destroy(panel8);
         Destroy(panel7);
         Destroy(panel6);

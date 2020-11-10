@@ -16,6 +16,9 @@ public class DialogueTrigger2 : MonoBehaviour
 
     void Update()
     {
+        if (panel3 == null) {
+            return;
+        }
         //How To Reference An Variable Associated With The Player Object (Can Do The Same For Any Object)
         GameObject player = GameObject.Find("Player");
         PlayerController playerJump = player.GetComponent<PlayerController>();
@@ -30,5 +33,8 @@ public class DialogueTrigger2 : MonoBehaviour
             }
         }
 
+        //if (panel1 == null) { 
+           //return;
+        //}
     }
 }

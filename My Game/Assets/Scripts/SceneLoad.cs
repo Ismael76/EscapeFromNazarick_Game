@@ -31,12 +31,10 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadTutorial() {
 
-        SceneManager.LoadScene("Tut Level");
-        PauseMenu.isGamePaused = false;
-        TutEnd.isTutFinished = false;
+        Time.timeScale = 1f;
+        CameraController.rotationSpeed = 5f;
+        SceneManager.LoadScene("Tut Level"); 
 
-        PlayerController playerJump = GetComponent<PlayerController>();
-        playerJump.jumpForce = 0f;
     }
 
     public void QuitGame()

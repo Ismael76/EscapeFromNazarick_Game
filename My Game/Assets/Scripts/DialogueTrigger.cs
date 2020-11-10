@@ -18,11 +18,14 @@ public class DialogueTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
+        if (panel2 == null) { 
+            return;
+        }
+        
         Destroy(panel1);
         panel2.SetActive(true);
         PlayerController playerJump = other.GetComponent<PlayerController>();
         playerJump.jumpForce = 15f;
-
 
     }
 }

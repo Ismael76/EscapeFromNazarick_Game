@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
 
     public Vector3 cameraOffset; //This Is Used To Move The Camera To Follow The Players Movements
 
-    public float rotationSpeed; //The Speed To Rotate Camera Around Player
+    public static float rotationSpeed; //The Speed To Rotate Camera Around Player
 
     public Transform pivot; //Camera Set Around The Player Object
 
@@ -34,13 +34,16 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         if (PauseMenu.isGamePaused == true && TutEnd.isTutFinished == false) {
-
+            //Debug.Log("Im In Loop 1");
             rotationSpeed = 0f;
 
         } else if(TutEnd.isTutFinished == true) {
-
+            //Debug.Log("Im In Loop 2");
             rotationSpeed = 0f;
             
+        } else if(PlayerHealth.isGameOver == true) {
+            //Debug.Log("Im In Loop 3");
+            rotationSpeed = 0f;
         } else {
 
             rotationSpeed = 5f;

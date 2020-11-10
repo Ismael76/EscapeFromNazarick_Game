@@ -6,6 +6,8 @@ public class PowerUp2 : MonoBehaviour
 {
 
     public GameObject pickUpEffect;
+    public GameObject bottleEffect1;
+    public GameObject bottleEffect2;
 
     void OnTriggerEnter(Collider other)
     {
@@ -25,6 +27,8 @@ public class PowerUp2 : MonoBehaviour
         jump.jumpForce = 30f;
 
         //Hides The Powerup, So It Can No Longer Be Obtained
+        bottleEffect1.SetActive(false);
+        bottleEffect2.SetActive(false);
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
