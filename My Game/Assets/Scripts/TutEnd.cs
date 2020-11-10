@@ -33,6 +33,7 @@ public class TutEnd : MonoBehaviour
         panel10.SetActive(true);
         Time.timeScale = 0f;
         isTutFinished = true;
+        Cursor.lockState = CursorLockMode.None;
 
     }
 }

@@ -16,15 +16,19 @@ public class SceneLoad : MonoBehaviour
 
     IEnumerator LoadLevel (int levelIndex) {
 
+        PauseMenu.isGamePaused = false;
+
+        TutEnd.isTutFinished = false;
+
+        PlayerHealth.isGameOver = false;
+
+        OffMapDeath.playerIsOffMap = false;
+
         transitions.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene(levelIndex);
-
-        PauseMenu.isGamePaused = false;
-
-        TutEnd.isTutFinished = false;
         
 
     }
@@ -33,6 +37,10 @@ public class SceneLoad : MonoBehaviour
 
         Time.timeScale = 1f;
         CameraController.rotationSpeed = 5f;
+        PlayerHealth.isGameOver = false;
+        TutEnd.isTutFinished = false;
+        PauseMenu.isGamePaused = false;
+        OffMapDeath.playerIsOffMap = false;
         SceneManager.LoadScene("Tut Level"); 
 
     }

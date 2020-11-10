@@ -28,24 +28,20 @@ public class CameraController : MonoBehaviour
         pivot.transform.parent = null;
 
 
-        //Cursor.lockState = CursorLockMode.Locked; //Cursor Hide, When Game Begins
+        Cursor.lockState = CursorLockMode.Locked; //Cursor Hide, When Game Begins
     }
 
     void LateUpdate()
     {
         if (PauseMenu.isGamePaused == true && TutEnd.isTutFinished == false) {
-            //Debug.Log("Im In Loop 1");
             rotationSpeed = 0f;
 
         } else if(TutEnd.isTutFinished == true) {
-            //Debug.Log("Im In Loop 2");
             rotationSpeed = 0f;
             
         } else if(PlayerHealth.isGameOver == true) {
-            //Debug.Log("Im In Loop 3");
             rotationSpeed = 0f;
         } else {
-
             rotationSpeed = 5f;
         }
 

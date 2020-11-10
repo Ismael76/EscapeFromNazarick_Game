@@ -66,7 +66,9 @@ public class PlayerHealth : MonoBehaviour
         //This Checks If The Player Is Invincible, If They Are, It Will Prevent Further Damage & Show Player Object Model Flashing, Else It Will Damage The Player & Also Flashing The Player To Show Damage Dealt
         if (invincibilityCounter > 0)
         {
-
+            if (OffMapDeath.playerIsOffMap == true){
+                GameOver();
+            }
             invincibilityCounter -= Time.deltaTime;
 
             flashCounter -= Time.deltaTime;
@@ -126,6 +128,7 @@ public class PlayerHealth : MonoBehaviour
         gameOver.SetActive(true);
         Time.timeScale = 0f;
         isGameOver = true;
+        Cursor.lockState = CursorLockMode.None;
 
     }
 
