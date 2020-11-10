@@ -24,12 +24,16 @@ public class SceneLoad : MonoBehaviour
 
         PauseMenu.isGamePaused = false;
 
+        TutEnd.isTutFinished = false;
+        
+
     }
 
     public void LoadTutorial() {
 
         SceneManager.LoadScene("Tut Level");
         PauseMenu.isGamePaused = false;
+        TutEnd.isTutFinished = false;
 
         PlayerController playerJump = GetComponent<PlayerController>();
         playerJump.jumpForce = 0f;
