@@ -22,7 +22,11 @@ public class PowerUp : MonoBehaviour
         Instantiate(pickUpEffect, transform.position, transform.rotation);
 
         //Applies Power Up To The Player
-        player.transform.localScale *= 1.4f;
+        PlayerHealth health = player.GetComponent<PlayerHealth>(); //How To Reference A Variable/Property In A Different Script
+        health.maxHealth = 10;
+        health.playerHealth = 10;
+        health.numOfHearts = 10;
+
 
         //Hides The Powerup, So It Can No Longer Be Obtained
         GetComponent<MeshRenderer>().enabled = false;
@@ -30,7 +34,9 @@ public class PowerUp : MonoBehaviour
 
         //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
         yield return new WaitForSeconds(5f);
-        player.transform.localScale /= 1.4f;
+        health.maxHealth = 5;
+        health.playerHealth = 5;
+        health.numOfHearts = 5;
         
         //Destroys PowerUp
         Destroy(gameObject);

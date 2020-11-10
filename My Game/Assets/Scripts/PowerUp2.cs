@@ -21,7 +21,7 @@ public class PowerUp2 : MonoBehaviour
         Instantiate(pickUpEffect, transform.position, transform.rotation);
 
         //Applies Power Up To The Player
-        PlayerController jump = player.GetComponent<PlayerController>(); //How to reference a variable/property in a different script
+        PlayerController jump = player.GetComponent<PlayerController>(); //How To Reference A Variable/Property In A Different Script
         jump.jumpForce = 30f;
 
         //Hides The Powerup, So It Can No Longer Be Obtained

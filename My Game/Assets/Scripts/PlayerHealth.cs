@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5; //The Players Maximum Health They Can Attain
+    public int maxHealth; //The Players Maximum Health They Can Attain
     public int playerHealth; //The Players Current Health In Game
 
     public int numOfHearts; //The Players Hearts Which Indicates The Amount Of Health They Have
@@ -25,10 +25,12 @@ public class PlayerHealth : MonoBehaviour
     private bool isRespawning; //Used To Check If Player Is Respawning
     private Vector3 respawnPoint; //Respawn Point For The Player
 
-    public float respawnLength; //Length Of The Respawn
+    public float respawnLength = 1; //Length Of The Respawn
 
     void Start()
     {
+        maxHealth = 5;
+        
         playerHealth = maxHealth; //Setting Player Health To Maximum Health When The Game Begins
 
         respawnPoint = player.transform.position; //Positioning Player At The Respawn Point When Game Begins
@@ -38,24 +40,26 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        // This Part Of The Code Checks Players Health With The Hearts Displayed On Screen To Represent Correct Health
         if (playerHealth > numOfHearts) {
-            playerHealth = numOfHearts;
+                playerHealth = numOfHearts;
         }
-        for (int i = 0; i < hearts.Length; i++)
-            {
-                if (i < playerHealth) {
-                    hearts[i].sprite = fullHeart;
-                } else {
-                    hearts[i].sprite = emptyHeart;
-                }
-                if (i < numOfHearts) {
-                    hearts[i].enabled = true;
-                } else {
-                    hearts[i].enabled = false;
+            // This Part Of The Code Checks Players Health With The Hearts Displayed On Screen To Represent Correct Health
+            for (int i = 0; i < hearts.Length; i++)
+                {
+                    //If Players Health Is Less Than The Number Of Hearts In The Array, Show Red Hearts That Correspond To Players Health, The Other Hearts In Array Will Be Grey (To Show Player Lost Health)
+                    if (i < playerHealth) {
+                        hearts[i].sprite = fullHeart;
+                    } else {
+                        hearts[i].sprite = emptyHeart;
+                    }
+                    //Will Show All Hearts In Array Until The Maximum Number Of Hearts Array Is Reached
+                    if (i < numOfHearts) {
+                        hearts[i].enabled = true;
+                    } else {
+                         hearts[i].enabled = false;
 
+                    }
                 }
-            }
         //This Checks If The Player Is Invincible, If They Are, It Will Prevent Further Damage & Show Player Object Model Flashing, Else It Will Damage The Player & Also Flashing The Player To Show Damage Dealt
         if (invincibilityCounter > 0)
         {
@@ -88,6 +92,8 @@ public class PlayerHealth : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             playerHealth -= damage;
+
+
 
             if (playerHealth <= 0)
             {
@@ -128,13 +134,12 @@ public class PlayerHealth : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
         CharacterController charController = player.GetComponent<CharacterController>();
-
+    
         isRespawning = true;
-        player.gameObject.SetActive(false);
+        player.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(respawnLength);
         isRespawning = false;
-        player.gameObject.SetActive(true);
 
         charController.enabled = false;
         player.transform.position = respawnPoint;
@@ -145,6 +150,7 @@ public class PlayerHealth : MonoBehaviour
         invincibilityCounter = invincibilityLength;
         playerRenderer.enabled = false;
         flashCounter = flashLength;
+
     }
 
     //Restoring The Health Of The Player

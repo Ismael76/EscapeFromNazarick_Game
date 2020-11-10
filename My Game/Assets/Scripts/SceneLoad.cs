@@ -21,13 +21,25 @@ public class SceneLoad : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene(levelIndex);
+
+        PauseMenu.isGamePaused = false;
+
+    }
+
+    public void LoadTutorial() {
+
+        SceneManager.LoadScene("Tut Level");
+        PauseMenu.isGamePaused = false;
+
+        PlayerController playerJump = GetComponent<PlayerController>();
+        playerJump.jumpForce = 0f;
     }
 
     public void QuitGame()
     { //To Quit Out Of The Game
 
         Application.Quit();
-        Debug.Log("Quit");
+
     }
 
 }

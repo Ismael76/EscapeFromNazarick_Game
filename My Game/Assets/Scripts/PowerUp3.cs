@@ -21,7 +21,7 @@ public class PowerUp3 : MonoBehaviour
         Instantiate(pickUpEffect, transform.position, transform.rotation);
 
         //Applies Power Up To The Player
-        PlayerController speed = player.GetComponent<PlayerController>(); //How to reference a variable/property in a different script
+        PlayerController speed = player.GetComponent<PlayerController>();
         speed.moveSpeed = 15f;
 
         //Hides The Powerup, So It Can No Longer Be Obtained
