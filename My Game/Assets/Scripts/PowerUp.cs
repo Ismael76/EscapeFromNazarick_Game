@@ -9,6 +9,8 @@ public class PowerUp : MonoBehaviour
     public GameObject bottleEffect1;
     public GameObject bottleEffect2;
 
+    public static bool isUsingPowerUp1 = false;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -28,6 +30,7 @@ public class PowerUp : MonoBehaviour
         health.maxHealth = 10;
         health.playerHealth = 10;
         health.numOfHearts = 10;
+        isUsingPowerUp1 = true;
 
 
         //Hides The Powerup, So It Can No Longer Be Obtained
@@ -37,10 +40,11 @@ public class PowerUp : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
         health.maxHealth = 5;
         health.playerHealth = 5;
         health.numOfHearts = 5;
+        isUsingPowerUp1 = false;
         
         //Destroys PowerUp
         Destroy(gameObject);

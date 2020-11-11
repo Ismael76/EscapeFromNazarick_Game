@@ -24,6 +24,13 @@ public class SceneLoad : MonoBehaviour
 
         OffMapDeath.playerIsOffMap = false;
 
+        PowerUpCoolDown3.isCoolDown = false;
+        PowerUpCoolDown2.isCoolDown = false;
+        PowerUpCoolDown.isCoolDown = false;
+        PowerUp3.isUsingPowerUp3 = false;
+        PowerUp2.isUsingPowerUp2 = false;
+        PowerUp.isUsingPowerUp1 = false;
+
         transitions.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
@@ -42,6 +49,12 @@ public class SceneLoad : MonoBehaviour
         TutEnd.isTutFinished = false;
         PauseMenu.isGamePaused = false;
         OffMapDeath.playerIsOffMap = false;
+        PowerUpCoolDown3.isCoolDown = false;
+        PowerUpCoolDown2.isCoolDown = false;
+        PowerUpCoolDown.isCoolDown = false;
+        PowerUp3.isUsingPowerUp3 = false;
+        PowerUp2.isUsingPowerUp2 = false;
+        PowerUp.isUsingPowerUp1 = false;
         SceneManager.LoadScene("Tut Level");
 
     }

@@ -34,7 +34,7 @@ public class PowerUp2 : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         isUsingPowerUp2 = false;
 
         //Destroys PowerUp
