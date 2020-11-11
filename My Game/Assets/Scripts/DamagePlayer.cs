@@ -13,6 +13,9 @@ public class DamagePlayer : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
+            if (PowerUp3.isUsingPowerUp3 == true) {
+                return;
+            }
             Vector3 hitDirection = other.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
             FindObjectOfType<PlayerHealth>().PlayerDamaged(damageDealt, hitDirection);

@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
     public PlayerController player;
 
-    public float invincibilityLength; //How Long The Player Should Be Invincible For When Damaged
+    public static float invincibilityLength = 2f; //How Long The Player Should Be Invincible For When Damaged
     private float invincibilityCounter; //Used To Count Down The Players Invincibility Time
 
     public Renderer playerRenderer;
@@ -69,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
             if (OffMapDeath.playerIsOffMap == true){
                 GameOver();
             }
+
             invincibilityCounter -= Time.deltaTime;
 
             flashCounter -= Time.deltaTime;

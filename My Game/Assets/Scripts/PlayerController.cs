@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject player; //Player Object/Model
 
+    private int dJumpCounter = 0;
+    private int nrOfAlowedDJumps = 1;
+
     public float knockBackPower; //Power Of The Knockback Force On The Player (How Far They Are Knocked Back)
     public float knockBackTime; //How Far Character Should Be Knocked Back Based On Time (How Long They Are In The Air)
     private float knockBackCounter; //Knockback Counter Used To Check If Player Is Not Already Knocked Back & How Long They Should Be Knocked Back For
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
 
         controller = GetComponent<CharacterController>();
+
     }
 
     void Update()
@@ -54,19 +58,21 @@ public class PlayerController : MonoBehaviour
             //If Player Is On The Ground, Then When They Jump The Player Should Jump With The Force They Are Given
             if (controller.isGrounded)
             { 
-
                 moveDirection.y = 0; 
-
                 if (Input.GetButtonDown("Jump"))
                 {
-
-                    moveDirection.y = jumpForce; 
+                    moveDirection.y = jumpForce;
+                    dJumpCounter = 0;
 
                 }
 
+            } else if (Input.GetButtonDown("Jump") && PowerUp2.isUsingPowerUp2 == true && !controller.isGrounded && dJumpCounter < nrOfAlowedDJumps) {
+
+                moveDirection.y = jumpForce * 2f;
+                dJumpCounter++;
+
             }
-        }
-        else
+        } else
         {
 
             knockBackCounter -= Time.deltaTime;
@@ -94,6 +100,27 @@ public class PlayerController : MonoBehaviour
         moveDirection = knockbackDirection * knockBackPower;
 
         moveDirection.y = knockBackPower;
+
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+
+        switch (hit.gameObject.tag)
+        {
+
+            case "JumpPad":
+                jumpForce = 25f;
+                break;
+            case "SpeedPad":
+                moveSpeed = 35f;
+                break;
+            case "Ground":
+                jumpForce = 15f;
+                moveSpeed = 7f;
+                break;
+        }
+
 
     }
 }

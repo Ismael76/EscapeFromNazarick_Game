@@ -9,6 +9,8 @@ public class PowerUp2 : MonoBehaviour
     public GameObject bottleEffect1;
     public GameObject bottleEffect2;
 
+    public static bool isUsingPowerUp2 = false;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -23,9 +25,8 @@ public class PowerUp2 : MonoBehaviour
         Instantiate(pickUpEffect, transform.position, transform.rotation);
 
         //Applies Power Up To The Player
-        PlayerController jump = player.GetComponent<PlayerController>(); //How To Reference A Variable/Property In A Different Script
-        jump.jumpForce = 30f;
-
+        isUsingPowerUp2 = true;
+        
         //Hides The Powerup, So It Can No Longer Be Obtained
         bottleEffect1.SetActive(false);
         bottleEffect2.SetActive(false);
@@ -33,8 +34,8 @@ public class PowerUp2 : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
-        yield return new WaitForSeconds(5f);
-        jump.jumpForce = 15f;
+        yield return new WaitForSeconds(10f);
+        isUsingPowerUp2 = false;
 
         //Destroys PowerUp
         Destroy(gameObject);

@@ -29,6 +29,7 @@ public class SceneLoad : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene(levelIndex);
+
         
 
     }
@@ -41,7 +42,7 @@ public class SceneLoad : MonoBehaviour
         TutEnd.isTutFinished = false;
         PauseMenu.isGamePaused = false;
         OffMapDeath.playerIsOffMap = false;
-        SceneManager.LoadScene("Tut Level"); 
+        SceneManager.LoadScene("Tut Level");
 
     }
 
