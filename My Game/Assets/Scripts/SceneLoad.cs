@@ -44,7 +44,7 @@ public class SceneLoad : MonoBehaviour
     public void LoadTutorial() {
 
         Time.timeScale = 1f;
-        CameraController.rotationSpeed = 5f;
+        CameraMovement.rotationSpeed = 5f;
         PlayerHealth.isGameOver = false;
         TutEnd.isTutFinished = false;
         PauseMenu.isGamePaused = false;

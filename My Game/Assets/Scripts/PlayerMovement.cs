@@ -2,45 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
-    public float moveSpeed; //The Speed Of The Players Movement
+    public float moveSpeed; 
 
-    public float jumpForce; //The Players Jumping Prowess
+    public float jumpForce; 
 
     public CharacterController controller;
 
-    public static Vector3 moveDirection; //Player Movement
+    public static Vector3 moveDirection; 
 
-    public float gravityScale; //Scale Of The Gravity Force On The Player
+    public float gravityScale; 
 
-    public Animator characterAnim; //Used For Certain Animations Of The Character
+    public Animator characterAnim; 
 
-    public Transform piv; //Camera Pivot
+    public Transform piv; 
 
-    public float rotationSpeed; //Rotation Speed Of The Player
+    public float rotationSpeed; 
 
-    public GameObject player; //Player Object/Model
+    public GameObject player; 
 
     private int dJumpCounter = 0;
     private int nrOfAlowedDJumps = 1;
 
-    public float knockBackPower; //Power Of The Knockback Force On The Player (How Far They Are Knocked Back)
-    public float knockBackTime; //How Far Character Should Be Knocked Back Based On Time (How Long They Are In The Air)
-    private float knockBackCounter; //Knockback Counter Used To Check If Player Is Not Already Knocked Back & How Long They Should Be Knocked Back For
+    public float knockBackPower; 
+    public float knockBackTime; 
+    private float knockBackCounter; 
 
     void Start()
     {
-
+        //CharacterController Used To Move Player Instead Of RigidBody
         controller = GetComponent<CharacterController>();
 
     }
 
     void Update()
     {
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime); //Inbuilt Graphity Physics On Movement Of The Player
-        controller.Move(moveDirection * Time.deltaTime); //Moves Character Using Character Controller & The Vectors Given With 'moveDirection' Variable
+        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime); 
+        controller.Move(moveDirection * Time.deltaTime); 
 
         //Character Animations Depending On Character Positioning/Actions
         characterAnim.SetBool("isGrounded", controller.isGrounded);
@@ -48,10 +48,10 @@ public class PlayerController : MonoBehaviour
 
         if (knockBackCounter <= 0)
         {
-
+            //Movement Of Character
 
             float yStore = moveDirection.y;
-            moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal")); //Movement Of Character
+            moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal")); 
             moveDirection = moveDirection.normalized * moveSpeed;
             moveDirection.y = yStore;
 
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnControllerColliderHit(ControllerColliderHit hit) //Platforms Given Specific Abilities
     {
 
         switch (hit.gameObject.tag)
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
                 jumpForce = 25f;
                 break;
             case "SpeedPad":
-                moveSpeed = 35f;
+                moveSpeed = 15f;
                 break;
             case "Ground":
                 jumpForce = 15f;

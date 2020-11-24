@@ -21,7 +21,7 @@ public class DialogueTrigger2 : MonoBehaviour
         }
         //How To Reference An Variable Associated With The Player Object (Can Do The Same For Any Object)
         GameObject player = GameObject.Find("Player");
-        PlayerController playerJump = player.GetComponent<PlayerController>();
+        PlayerMovement playerJump = player.GetComponent<PlayerMovement>();
         if (playerJump.jumpForce > 0f)
         {
             if (Input.GetKeyDown(KeyCode.Space))

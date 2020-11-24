@@ -24,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
         
         Destroy(panel1);
         panel2.SetActive(true);
-        PlayerController playerJump = other.GetComponent<PlayerController>();
+        PlayerMovement playerJump = other.GetComponent<PlayerMovement>();
         playerJump.jumpForce = 15f;
 
     }

@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
 
-    public Transform target; //Target Of The Camera (What The Camera Is Focussed On)
+    public Transform target;
 
-    public Vector3 cameraOffset; //This Is Used To Move The Camera To Follow The Players Movements
+    public Vector3 cameraOffset;
 
-    public static float rotationSpeed; //The Speed To Rotate Camera Around Player
+    public static float rotationSpeed;
 
-    public Transform pivot; //Camera Set Around The Player Object
+    public Transform pivot;
 
-    public bool invertCamera; //Ability To Invert The Camera
+    public bool invertCamera;
 
 
 
@@ -28,31 +28,36 @@ public class CameraController : MonoBehaviour
         pivot.transform.parent = null;
 
 
-        Cursor.lockState = CursorLockMode.Locked; //Cursor Hide, When Game Begins
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void LateUpdate()
     {
-        if (PauseMenu.isGamePaused == true && TutEnd.isTutFinished == false) {
+        if (PauseMenu.isGamePaused == true && TutEnd.isTutFinished == false)
+        {
             rotationSpeed = 0f;
 
-        } else if(TutEnd.isTutFinished == true) {
+        }
+        else if (TutEnd.isTutFinished == true)
+        {
             rotationSpeed = 0f;
-            
-        } else if(PlayerHealth.isGameOver == true) {
+
+        }
+        else if (PlayerHealth.isGameOver == true)
+        {
             rotationSpeed = 0f;
-        } else {
+        }
+        else
+        {
             rotationSpeed = 5f;
         }
 
         pivot.transform.position = target.transform.position;
 
 
-        //Gets The x Position Of The Mouse When Moving It & Rotates The [layer
         float horizontal = Input.GetAxis("Mouse X") * rotationSpeed;
         pivot.Rotate(0, horizontal, 0);
 
-        //Gets y Position Of Mouse & Rotates The Pivot
         float vertical = Input.GetAxis("Mouse Y") * rotationSpeed;
 
         //Gives Players The Option To Invert Their Camera
@@ -67,25 +72,25 @@ public class CameraController : MonoBehaviour
 
         //Limiting The Up & Down Camera Rotation
         if (pivot.rotation.eulerAngles.x > 45f && pivot.rotation.eulerAngles.x < 180)
-        { 
+        {
             pivot.rotation = Quaternion.Euler(45f, 0, 0);
         }
         if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 315f)
-        { 
+        {
             pivot.rotation = Quaternion.Euler(315f, 0, 0);
 
         }
 
 
         //Moves Camera Based On Current Rotation Of Player & Original Camera Distance From The Player
-        float yAngle = pivot.eulerAngles.y; //eulerAngles Turns The Quaternion 4 Axis Back Into A Normal Vector3 Axis
+        float yAngle = pivot.eulerAngles.y;
         float xAngle = pivot.eulerAngles.x;
         Quaternion rotation = Quaternion.Euler(xAngle, yAngle, 0);
         transform.position = target.position - (rotation * cameraOffset);
 
         //If Camera Goes Below The Height Of The Player, It Will Prevent It From Going Down Even Further
         if (transform.position.y < target.position.y)
-        { 
+        {
 
             transform.position = new Vector3(transform.position.x, target.position.y - .5f, transform.position.z);
         }
