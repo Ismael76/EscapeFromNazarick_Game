@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int numOfHearts; 
 
     public Image[] hearts; 
+    public Image gems;
     public Sprite fullHeart, emptyHeart; 
 
     public PlayerMovement player;

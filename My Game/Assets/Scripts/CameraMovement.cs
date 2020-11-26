@@ -97,4 +97,10 @@ public class CameraMovement : MonoBehaviour
 
         transform.LookAt(target); //Makes The Camera Rotate & Look At Wherever The Player Is Currently
     }
+
+    public void ChangeMouseSensitivity(float newSens)
+    {
+
+        rotationSpeed = newSens;
+    }
 }

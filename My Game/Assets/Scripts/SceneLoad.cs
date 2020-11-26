@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //To Load Scenes
+using UnityEngine.SceneManagement; 
 
 public class SceneLoad : MonoBehaviour
 {
@@ -63,6 +63,17 @@ public class SceneLoad : MonoBehaviour
     { //To Quit Out Of The Game
 
         Application.Quit();
+
+    }
+
+    public void SettingsMenu() {
+
+        SceneManager.LoadScene("SettingMenu");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("StartMenu");
 
     }
 
