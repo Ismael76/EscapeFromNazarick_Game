@@ -33,8 +33,8 @@ public class DialogueTrigger2 : MonoBehaviour
             }
         }
 
-        //if (panel1 == null) { 
-           //return;
-        //}
+        if (panel1 == null) { 
+           return;
+        }
     }
 }

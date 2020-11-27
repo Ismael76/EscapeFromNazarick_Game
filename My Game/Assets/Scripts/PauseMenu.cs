@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject pauseMenuUI;
 
+    public Slider newMusicSlider, newSoundEffectSlider;
+
+
     void Start()
     {
         pauseMenuUI.SetActive(false);
+
     }
 
     void Update()
@@ -71,4 +76,12 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
 
     }
+
+    //Continue Settings From Main Menu To Other Scenes
+    //private void ContinueSettings()
+    //{
+
+       // newMusicSlider = AudioManager.musicSlider;
+        //newSoundEffectSlider = AudioManager.soundEffectSlider;
+    //}
 }

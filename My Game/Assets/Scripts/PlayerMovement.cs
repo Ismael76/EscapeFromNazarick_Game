@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
         if (knockBackCounter <= 0)
         {
             //Movement Of Character
-
             float yStore = moveDirection.y;
             moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal")); 
             moveDirection = moveDirection.normalized * moveSpeed;
