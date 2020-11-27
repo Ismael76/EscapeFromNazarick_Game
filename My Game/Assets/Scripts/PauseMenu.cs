@@ -20,10 +20,9 @@ public class PauseMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
+            Cursor.lockState = CursorLockMode.Locked;
             if (isGamePaused)
             {
-
                 ResumeGame();
             }
             else
