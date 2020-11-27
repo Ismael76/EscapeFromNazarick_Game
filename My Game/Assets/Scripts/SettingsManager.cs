@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioManager : MonoBehaviour
+public class SettingsManager : MonoBehaviour
 {
     private static readonly string FirstPlay = "FirstPlay";
     private static readonly string MusicPref = "MusicPref";
     private static readonly string SoundEffectPref = "SoundEffectPref";
+    private static readonly string SensitivityPref = "SensitivityPref";
     private int firstPlayInt;
 
-    public Slider musicSlider, soundEffectSlider;
+    public static float newSens;
+
+    public Slider musicSlider, soundEffectSlider, sensitivitySlider;
     private float musicFloat, soundEffectFloat;
 
     public AudioSource musicAudio;
@@ -25,12 +28,14 @@ public class AudioManager : MonoBehaviour
         if (firstPlayInt == 0)
         {
             //Setting All Initial Values Of Sliders On First Playthrough As Well As When The Player Changes Settings First Time etc...
-            musicFloat = 1f;
-            soundEffectFloat = 1f;
+            musicFloat = 0.25f;
+            soundEffectFloat = 0.5f;
             musicSlider.value = musicFloat;
             soundEffectSlider.value = soundEffectFloat;
+            sensitivitySlider.value = CameraMovement.rotationSpeed;
             PlayerPrefs.SetFloat(MusicPref, musicFloat);
             PlayerPrefs.SetFloat(SoundEffectPref, soundEffectFloat);
+            PlayerPrefs.SetFloat(SensitivityPref, CameraMovement.rotationSpeed);
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
 
@@ -41,6 +46,8 @@ public class AudioManager : MonoBehaviour
             musicSlider.value = musicFloat;
             soundEffectFloat = PlayerPrefs.GetFloat(SoundEffectPref);
             soundEffectSlider.value = soundEffectFloat;
+            CameraMovement.rotationSpeed = PlayerPrefs.GetFloat(SensitivityPref);
+            sensitivitySlider.value = CameraMovement.rotationSpeed;
 
         }
 
@@ -52,6 +59,7 @@ public class AudioManager : MonoBehaviour
 
         PlayerPrefs.SetFloat(MusicPref, musicSlider.value);
         PlayerPrefs.SetFloat(SoundEffectPref, soundEffectSlider.value);
+        PlayerPrefs.SetFloat(SensitivityPref, sensitivitySlider.value);
 
     }
 
@@ -69,7 +77,6 @@ public class AudioManager : MonoBehaviour
     //Linking Slider To Game Audio
     public void UpdateAudio()
     {
-
         musicAudio.volume = musicSlider.value;
 
         for (int i = 0; i < soundEffectAudio.Length; i++)
@@ -78,5 +85,13 @@ public class AudioManager : MonoBehaviour
             soundEffectAudio[i].volume = soundEffectSlider.value;
         }
 
+    }
+
+    public void UpdateSensitivity()
+    {
+
+        CameraMovement.rotationSpeed = sensitivitySlider.value;
+
+        newSens = CameraMovement.rotationSpeed;
     }
 }

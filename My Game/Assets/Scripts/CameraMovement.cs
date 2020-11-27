@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
 
     public Vector3 cameraOffset;
 
-    public static float rotationSpeed;
+    public static float rotationSpeed = 5f;
 
     public Transform pivot;
 
@@ -49,7 +49,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            rotationSpeed = 5f;
+            rotationSpeed = SettingsManager.newSens;
         }
 
         pivot.transform.position = target.transform.position;
