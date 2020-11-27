@@ -19,6 +19,7 @@ public class SettingsManager : MonoBehaviour
     public AudioSource musicAudio;
     public AudioSource[] soundEffectAudio;
 
+
     public void Start()
     {
 
@@ -53,6 +54,7 @@ public class SettingsManager : MonoBehaviour
 
 
     }
+
 
     public void SaveSoundSettings()
     {
@@ -94,4 +96,5 @@ public class SettingsManager : MonoBehaviour
 
         newSens = CameraMovement.rotationSpeed;
     }
+
 }

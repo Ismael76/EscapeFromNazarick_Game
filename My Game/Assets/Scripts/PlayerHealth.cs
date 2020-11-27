@@ -99,6 +99,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (playerHealth <= 0)
             {
+
                 GameOver();
 
             }

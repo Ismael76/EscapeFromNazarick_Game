@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutEnd : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class TutEnd : MonoBehaviour
     public GameObject panel2;
     public GameObject panel1;
 
-
+    public Text finishedTimerText;
     public static bool isTutFinished = false;
 
     void OnTriggerEnter(Collider other)
@@ -34,6 +35,9 @@ public class TutEnd : MonoBehaviour
         Time.timeScale = 0f;
         isTutFinished = true;
         Cursor.lockState = CursorLockMode.None;
+
+        GameObject.Find("Timer").SendMessage("FinishTimer");
+        finishedTimerText.text = PlayerPrefs.GetString("timerValue");
 
     }
 }

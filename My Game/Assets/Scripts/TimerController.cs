@@ -13,9 +13,11 @@ public class TimerController : MonoBehaviour
 
     private bool finished = false;
 
+    private string timerValue;
+
     void Start() {
 
-        timerText.text = "Time: 00:00.00";
+        timerText.text = "00:00.00";
         startTime = Time.time; //Gives Time Since Beginning Of Game Level
 
     }
@@ -32,13 +34,16 @@ public class TimerController : MonoBehaviour
             string minutes = ((int) t / 60).ToString();
             string seconds = ((t % 60)).ToString("f2");
 
-            timerText.text = "Time: " + minutes + ":" + seconds;
+            timerText.text = minutes + ":" + seconds;
         }
     }
 
     public void FinishTimer() {
         finished = true;
         timerText.color = Color.yellow;
+        timerValue = timerText.text;
+        PlayerPrefs.SetString("timerValue", timerValue);
+
     }
 
     
