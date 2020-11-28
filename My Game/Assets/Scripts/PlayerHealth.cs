@@ -34,8 +34,6 @@ public class PlayerHealth : MonoBehaviour
         
         playerHealth = maxHealth;
 
-        Debug.Log("THIS IS WORKING");
-
     }
 
 
