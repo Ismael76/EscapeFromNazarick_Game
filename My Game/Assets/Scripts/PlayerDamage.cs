@@ -9,7 +9,7 @@ public class PlayerDamage : MonoBehaviour
 
 
     //If Player Collides With NPC They Will Be Dealt Damage & Knocked Back In The Direction They Were Damaged
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
