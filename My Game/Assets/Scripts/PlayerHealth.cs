@@ -32,7 +32,9 @@ public class PlayerHealth : MonoBehaviour
         //Setting Players Health When Game Starts
         maxHealth = 5;
         
-        playerHealth = maxHealth; 
+        playerHealth = maxHealth;
+
+        Debug.Log("THIS IS WORKING");
 
     }
 
