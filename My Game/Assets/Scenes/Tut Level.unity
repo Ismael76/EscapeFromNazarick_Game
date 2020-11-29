@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: b7636ca95d0e1eb408ee3f0dd89047fd, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 544e3d1f185f6674da516b478d2c8caf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -6205,7 +6205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7477c4df7e8ae439481f9013e45268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpEffect: {fileID: 1000011128802252, guid: 1404c3ca4f99dd443acacdcbfc702cdb,
+  pickUpEffect: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567,
     type: 3}
   bottleEffect1: {fileID: 1000010521685976}
   bottleEffect2: {fileID: 1000011800019568}
@@ -7802,7 +7802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5603e592bb3f5469e60807a512a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpEffect: {fileID: 1000011128802252, guid: 1404c3ca4f99dd443acacdcbfc702cdb,
+  pickUpEffect: {fileID: 2971754584286891084, guid: 029f833a9312c2f4dba0826ca2d84b37,
     type: 3}
   bottleEffect1: {fileID: 1000012802258441}
   bottleEffect2: {fileID: 1000010398526155}
@@ -8527,8 +8527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3112ae4547b57249b0ea10dacc53bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpEffect: {fileID: 1000011128802252, guid: 1404c3ca4f99dd443acacdcbfc702cdb,
-    type: 3}
+  pickUpEffect: {fileID: 100004, guid: 757df604761b8ef42831192c70ee1099, type: 3}
   bottleEffect1: {fileID: 1000011509446311}
   bottleEffect2: {fileID: 1000013485302399}
 --- !u!1 &1379186888

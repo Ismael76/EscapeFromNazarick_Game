@@ -59,6 +59,60 @@ public class SceneLoad : MonoBehaviour
 
     }
 
+    public void LoadLevel1() {
+
+        Time.timeScale = 1f;
+        CameraMovement.rotationSpeed = 5f;
+        PlayerHealth.isGameOver = false;
+        TutEnd.isTutFinished = false;
+        PauseMenu.isGamePaused = false;
+        OffMapDeath.playerIsOffMap = false;
+        PowerUpCoolDown3.isCoolDown = false;
+        PowerUpCoolDown2.isCoolDown = false;
+        PowerUpCoolDown.isCoolDown = false;
+        PowerUp3.isUsingPowerUp3 = false;
+        PowerUp2.isUsingPowerUp2 = false;
+        PowerUp.isUsingPowerUp1 = false;
+        SceneManager.LoadScene("Level1");
+
+    }
+
+    public void LoadLevel2() {
+
+        Time.timeScale = 1f;
+        CameraMovement.rotationSpeed = 5f;
+        PlayerHealth.isGameOver = false;
+        TutEnd.isTutFinished = false;
+        PauseMenu.isGamePaused = false;
+        OffMapDeath.playerIsOffMap = false;
+        PowerUpCoolDown3.isCoolDown = false;
+        PowerUpCoolDown2.isCoolDown = false;
+        PowerUpCoolDown.isCoolDown = false;
+        PowerUp3.isUsingPowerUp3 = false;
+        PowerUp2.isUsingPowerUp2 = false;
+        PowerUp.isUsingPowerUp1 = false;
+        SceneManager.LoadScene("Level2");
+
+    }
+
+    public void LoadLevel3() {
+
+        Time.timeScale = 1f;
+        CameraMovement.rotationSpeed = 5f;
+        PlayerHealth.isGameOver = false;
+        TutEnd.isTutFinished = false;
+        PauseMenu.isGamePaused = false;
+        OffMapDeath.playerIsOffMap = false;
+        PowerUpCoolDown3.isCoolDown = false;
+        PowerUpCoolDown2.isCoolDown = false;
+        PowerUpCoolDown.isCoolDown = false;
+        PowerUp3.isUsingPowerUp3 = false;
+        PowerUp2.isUsingPowerUp2 = false;
+        PowerUp.isUsingPowerUp1 = false;
+        SceneManager.LoadScene("Level3");
+
+    }
+
     public void QuitGame()
     { //To Quit Out Of The Game
 

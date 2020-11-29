@@ -26,6 +26,7 @@ public class SettingsManager : MonoBehaviour
         //On First Playthrough It Will Get Initial Slider Values
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
+
         if (firstPlayInt == 0)
         {
             //Setting All Initial Values Of Sliders On First Playthrough As Well As When The Player Changes Settings First Time etc...
@@ -65,7 +66,7 @@ public class SettingsManager : MonoBehaviour
 
     }
 
-    //If Application Is Existed In An Impropoer Way It Will Save The Slider Values
+    //If Application Is Existed In An Improper Way It Will Save The Slider Values
     public void OnApplicationFocus(bool inFocus)
     {
 
