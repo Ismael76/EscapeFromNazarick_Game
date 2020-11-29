@@ -1607,7 +1607,6 @@ GameObject:
   - component: {fileID: 433906616}
   - component: {fileID: 433906615}
   - component: {fileID: 433906614}
-  - component: {fileID: 433906613}
   m_Layer: 0
   m_Name: Moving Platform Up/Down
   m_TagString: Untagged
@@ -1615,25 +1614,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &433906613
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433906612}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: feef2d8110bbef541900d14ec3e530da, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &433906614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3534,7 +3514,6 @@ GameObject:
   - component: {fileID: 965253169}
   - component: {fileID: 965253168}
   - component: {fileID: 965253167}
-  - component: {fileID: 965253170}
   - component: {fileID: 965253171}
   - component: {fileID: 965253172}
   m_Layer: 0
@@ -3618,25 +3597,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965253165}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &965253170
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965253165}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 77195eff0c51f1c479bf77c80546ed85, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &965253171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4774,7 +4734,6 @@ GameObject:
   - component: {fileID: 1308668133}
   - component: {fileID: 1308668132}
   - component: {fileID: 1308668137}
-  - component: {fileID: 1308668135}
   - component: {fileID: 1308668136}
   m_Layer: 0
   m_Name: MovingWallUpDown
@@ -4857,25 +4816,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308668130}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &1308668135
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308668130}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 140ba39562c198142a772ba6f9278236, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1308668136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5273,7 +5213,6 @@ GameObject:
   - component: {fileID: 1502182718}
   - component: {fileID: 1502182717}
   - component: {fileID: 1502182716}
-  - component: {fileID: 1502182715}
   - component: {fileID: 1502182719}
   - component: {fileID: 1502182720}
   m_Layer: 0
@@ -5297,25 +5236,6 @@ Transform:
   m_Father: {fileID: 738032804}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1502182715
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502182713}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97e63dd440ee44044a14a3f9f6826a29, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1502182716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5513,7 +5433,6 @@ GameObject:
   - component: {fileID: 1551898668}
   - component: {fileID: 1551898667}
   - component: {fileID: 1551898666}
-  - component: {fileID: 1551898670}
   - component: {fileID: 1551898671}
   - component: {fileID: 1551898669}
   - component: {fileID: 1551898665}
@@ -5611,25 +5530,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.98081183, y: 3.0749054, z: 1.1870354}
   m_Center: {x: 0.009845339, y: 0.7552862, z: -0.028629499}
---- !u!95 &1551898670
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551898664}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 05b0e0930f30d7f44abd524198147f6b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1551898671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5774,7 +5674,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1592847341}
   - component: {fileID: 1592847345}
-  - component: {fileID: 1592847342}
   - component: {fileID: 1592847344}
   - component: {fileID: 1592847343}
   - component: {fileID: 1592847346}
@@ -5800,25 +5699,6 @@ Transform:
   m_Father: {fileID: 738032804}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1592847342
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592847340}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4204af5e3fd695498721852cbdf7ac3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1592847343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6711,7 +6591,6 @@ GameObject:
   - component: {fileID: 1772730916}
   - component: {fileID: 1772730915}
   - component: {fileID: 1772730920}
-  - component: {fileID: 1772730914}
   - component: {fileID: 1772730919}
   m_Layer: 0
   m_Name: MovingWall
@@ -6720,25 +6599,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1772730914
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772730913}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3efc3182f72bdd042adaf73a681c5473, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1772730915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7037,7 +6897,6 @@ GameObject:
   - component: {fileID: 1925791952}
   - component: {fileID: 1925791951}
   - component: {fileID: 1925791950}
-  - component: {fileID: 1925791953}
   - component: {fileID: 1925791954}
   - component: {fileID: 1925791955}
   m_Layer: 0
@@ -7121,25 +6980,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925791948}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &1925791953
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925791948}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21e5c86f36e14644e80f463cd6be4ba6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1925791954
 MonoBehaviour:
   m_ObjectHideFlags: 0
