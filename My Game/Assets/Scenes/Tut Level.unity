@@ -5044,12 +5044,15 @@ GameObject:
   - component: {fileID: 965253169}
   - component: {fileID: 965253168}
   - component: {fileID: 965253167}
+  - component: {fileID: 965253170}
+  - component: {fileID: 965253171}
+  - component: {fileID: 965253172}
   m_Layer: 0
   m_Name: MovingWallUpDown2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &965253166
 Transform:
@@ -5125,6 +5128,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965253165}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &965253170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965253165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77195eff0c51f1c479bf77c80546ed85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &965253171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965253165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae90b324caff246a3f57b80a3b905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 164245266}
+--- !u!65 &965253172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965253165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0548179, z: 1}
+  m_Center: {x: 0, y: 0.027408665, z: 0}
 --- !u!1 &968686450
 GameObject:
   m_ObjectHideFlags: 0
@@ -7333,12 +7381,15 @@ GameObject:
   - component: {fileID: 1308668134}
   - component: {fileID: 1308668133}
   - component: {fileID: 1308668132}
+  - component: {fileID: 1308668137}
+  - component: {fileID: 1308668135}
+  - component: {fileID: 1308668136}
   m_Layer: 0
   m_Name: MovingWallUpDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1308668131
 Transform:
@@ -7414,6 +7465,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308668130}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1308668135
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308668130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 140ba39562c198142a772ba6f9278236, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1308668136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308668130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae90b324caff246a3f57b80a3b905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 164245266}
+--- !u!65 &1308668137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308668130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0438002, z: 1}
+  m_Center: {x: 0, y: 0.021899717, z: 0}
 --- !u!1 &1360785663
 GameObject:
   m_ObjectHideFlags: 0
@@ -7850,12 +7946,14 @@ GameObject:
   - component: {fileID: 1502182717}
   - component: {fileID: 1502182716}
   - component: {fileID: 1502182715}
+  - component: {fileID: 1502182719}
+  - component: {fileID: 1502182720}
   m_Layer: 0
   m_Name: MovingWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1502182714
 Transform:
@@ -7881,9 +7979,9 @@ Animator:
   m_GameObject: {fileID: 1502182713}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 23f01cb052fb9b24faa7d6f35403c756, type: 2}
+  m_Controller: {fileID: 9100000, guid: 97e63dd440ee44044a14a3f9f6826a29, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -7901,8 +7999,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0003746, y: 0.99999875, z: 0.9999996}
+  m_Center: {x: 0.00018682487, y: 0, z: 0}
 --- !u!23 &1502182717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7950,6 +8048,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502182713}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1502182719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502182713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae90b324caff246a3f57b80a3b905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 164245266}
+--- !u!65 &1502182720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502182713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0271434, y: 0.9999987, z: 0.9999996}
+  m_Center: {x: 0.013571054, y: 0, z: 0}
 --- !u!1 &1502872139
 GameObject:
   m_ObjectHideFlags: 0
@@ -8683,15 +8807,17 @@ GameObject:
   m_Component:
   - component: {fileID: 1592847341}
   - component: {fileID: 1592847345}
+  - component: {fileID: 1592847342}
   - component: {fileID: 1592847344}
   - component: {fileID: 1592847343}
-  - component: {fileID: 1592847342}
+  - component: {fileID: 1592847346}
+  - component: {fileID: 1592847347}
   m_Layer: 0
   m_Name: MovingWall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1592847341
 Transform:
@@ -8717,9 +8843,9 @@ Animator:
   m_GameObject: {fileID: 1592847340}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 23f01cb052fb9b24faa7d6f35403c756, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4204af5e3fd695498721852cbdf7ac3, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -8737,8 +8863,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0020517, y: 0.9999987, z: 0.9999996}
+  m_Center: {x: 0.0010253068, y: 0, z: 0}
 --- !u!23 &1592847344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8786,6 +8912,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592847340}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1592847346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592847340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae90b324caff246a3f57b80a3b905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 164245266}
+--- !u!65 &1592847347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592847340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0189221, y: 0.9999987, z: 0.9999996}
+  m_Center: {x: 0.009460447, y: 0, z: 0}
 --- !u!1 &1619683090
 GameObject:
   m_ObjectHideFlags: 0
@@ -10304,12 +10456,14 @@ GameObject:
   - component: {fileID: 1772730916}
   - component: {fileID: 1772730915}
   - component: {fileID: 1772730914}
+  - component: {fileID: 1772730919}
+  - component: {fileID: 1772730920}
   m_Layer: 0
   m_Name: MovingWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!95 &1772730914
 Animator:
@@ -10321,9 +10475,9 @@ Animator:
   m_GameObject: {fileID: 1772730913}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 23f01cb052fb9b24faa7d6f35403c756, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3efc3182f72bdd042adaf73a681c5473, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -10341,8 +10495,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0431162, y: 0.99999875, z: 0.9999996}
+  m_Center: {x: 0.02155776, y: 0, z: 0}
 --- !u!23 &1772730916
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10398,12 +10552,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772730913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.492, y: 13.53, z: 131.399}
+  m_LocalPosition: {x: 11.48, y: 13.53, z: 131.399}
   m_LocalScale: {x: 7.270289, y: 7.809668, z: 7.414091}
   m_Children: []
   m_Father: {fileID: 738032804}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772730919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772730913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae90b324caff246a3f57b80a3b905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 164245266}
+--- !u!65 &1772730920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772730913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0085685, y: 0.9999988, z: 0.9999996}
+  m_Center: {x: 0.0042839525, y: 0, z: 0}
 --- !u!1 &1773328548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11055,12 +11235,15 @@ GameObject:
   - component: {fileID: 1925791952}
   - component: {fileID: 1925791951}
   - component: {fileID: 1925791950}
+  - component: {fileID: 1925791953}
+  - component: {fileID: 1925791954}
+  - component: {fileID: 1925791955}
   m_Layer: 0
   m_Name: MovingWallUpDown3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1925791949
 Transform:
@@ -11136,6 +11319,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925791948}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1925791953
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925791948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21e5c86f36e14644e80f463cd6be4ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1925791954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925791948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae90b324caff246a3f57b80a3b905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 164245266}
+--- !u!65 &1925791955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925791948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0379815, z: 1}
+  m_Center: {x: 0, y: 0.018990565, z: 0}
 --- !u!1 &1934714456
 GameObject:
   m_ObjectHideFlags: 0
