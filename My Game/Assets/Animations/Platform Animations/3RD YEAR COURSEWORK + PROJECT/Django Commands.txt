@@ -1,0 +1,15 @@
+Command Prompt Commands:
+
+	To navigate to your home directory, use "cd" or "cd ~"
+	To navigate up one directory level, use "cd .."
+	To navigate to the previous directory (or back), use "cd -"
+	To navigate into the root directory, use "cd /"
+	To create a directory, use ' mkdir "nameofdirectory" '
+
+https://docs.djangoproject.com/en/3.1/intro/tutorial01/
+
+Django Commands:
+
+	"python -m django --version" - To check version of Django
+
+	"django-admin startproject mysite" - To create a project
