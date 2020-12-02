@@ -11,6 +11,8 @@ public class PowerUp : MonoBehaviour
 
     public static bool isUsingPowerUp1 = false;
 
+    public GameObject powerUpSound;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -24,6 +26,7 @@ public class PowerUp : MonoBehaviour
     {
         //Effect When Power Up Is Picked Up
         Instantiate(pickUpEffect, transform.position, transform.rotation);
+        powerUpSound.GetComponent<AudioSource>().Play();
 
         //Applies Power Up To The Player
         PlayerHealth health = player.GetComponent<PlayerHealth>(); //How To Reference A Variable/Property In A Different Script

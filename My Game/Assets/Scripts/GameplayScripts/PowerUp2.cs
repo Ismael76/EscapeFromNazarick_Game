@@ -11,6 +11,8 @@ public class PowerUp2 : MonoBehaviour
 
     public static bool isUsingPowerUp2 = false;
 
+    public GameObject powerUpSound;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -23,6 +25,7 @@ public class PowerUp2 : MonoBehaviour
     {
         //Effect When Power Up Is Picked Up
         Instantiate(pickUpEffect, transform.position, transform.rotation);
+        powerUpSound.GetComponent<AudioSource>().Play();
 
         //Applies Power Up To The Player
         isUsingPowerUp2 = true;

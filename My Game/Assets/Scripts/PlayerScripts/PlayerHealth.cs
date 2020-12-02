@@ -17,7 +17,8 @@ public class PlayerHealth : MonoBehaviour
     public PlayerMovement player;
 
     public static float invincibilityLength = 2f; 
-    private float invincibilityCounter; 
+    private float invincibilityCounter;
+    public static bool isInvincible = false;
 
     public Renderer playerRenderer;
     private float flashCounter; 
@@ -82,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
             {
 
                 playerRenderer.enabled = true;
+                isInvincible = false;
 
             }
         }
@@ -94,8 +96,6 @@ public class PlayerHealth : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             playerHealth -= damage;
-
-
 
             if (playerHealth <= 0)
             {
@@ -115,8 +115,10 @@ public class PlayerHealth : MonoBehaviour
 
                 flashCounter = flashLength;
 
-                }
+                isInvincible = true;
 
+                }
+                
             }
 
     }
@@ -126,6 +128,7 @@ public class PlayerHealth : MonoBehaviour
         gameOver.SetActive(true);
         Time.timeScale = 0f;
         isGameOver = true;
+        isInvincible = false;
         Cursor.lockState = CursorLockMode.None;
 
     }

@@ -11,6 +11,8 @@ public class PowerUp3 : MonoBehaviour
 
     public static bool isUsingPowerUp3 = false;
 
+    public GameObject powerUpSound;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -23,6 +25,8 @@ public class PowerUp3 : MonoBehaviour
     {
         //Effect When Power Up Is Picked Up
         Instantiate(pickUpEffect, transform.position, transform.rotation);
+        powerUpSound.GetComponent<AudioSource>().Play();
+        PlayerHealth.isInvincible = true;
 
         //Hides The Powerup, So It Can No Longer Be Obtained
         Destroy(bottleEffect1);
@@ -38,6 +42,7 @@ public class PowerUp3 : MonoBehaviour
         yield return new WaitForSeconds(15f);
         PlayerHealth.invincibilityLength = 2f;
         isUsingPowerUp3 = false;
+        PlayerHealth.isInvincible = false;
 
         //Destroys PowerUp
         Destroy(gameObject);

@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     NavMeshAgent agent;
 
+    public GameObject enemySoundtrack;
+
 
     void Start()
     {
@@ -27,6 +29,10 @@ public class Enemy : MonoBehaviour
 
         if (distance <= lookRadius)
         {
+            if (!enemySoundtrack.GetComponent<AudioSource>().isPlaying)
+            {
+                enemySoundtrack.GetComponent<AudioSource>().Play();
+            }
             enemyAnim.SetBool("isChasingPlayer", true);
             agent.SetDestination(target.position);
             enemyAnim.SetFloat("MoveSpeed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
@@ -49,6 +55,7 @@ public class Enemy : MonoBehaviour
         {
 
             enemyAnim.SetBool("isChasingPlayer", false);
+            enemySoundtrack.GetComponent<AudioSource>().Stop();
         }
     }
 

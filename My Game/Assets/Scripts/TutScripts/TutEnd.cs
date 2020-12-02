@@ -15,6 +15,7 @@ public class TutEnd : MonoBehaviour
     public GameObject panel3;
     public GameObject panel2;
     public GameObject panel1;
+    public GameObject tutEndSound;
 
     public Text finishedTimerText;
     public static bool isTutFinished = false;
@@ -36,6 +37,7 @@ public class TutEnd : MonoBehaviour
         isTutFinished = true;
         Cursor.lockState = CursorLockMode.None;
 
+        tutEndSound.GetComponent<AudioSource>().Play();
         GameObject.Find("Timer").SendMessage("FinishTimer");
         finishedTimerText.text = PlayerPrefs.GetString("timerValue");
 
