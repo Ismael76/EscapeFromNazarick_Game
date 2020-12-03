@@ -36,7 +36,7 @@ public class PowerUpCoolDown2 : MonoBehaviour
         if (isCoolDown)
         {
 
-            powerUp2.fillAmount -= 1 / 15f * Time.deltaTime;
+            powerUp2.fillAmount -= 1 / 3f * Time.deltaTime;
 
             if (powerUp2.fillAmount <= 0)
             {
