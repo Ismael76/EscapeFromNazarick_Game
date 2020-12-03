@@ -113,6 +113,11 @@ public class SceneLoad : MonoBehaviour
 
     }
 
+    public void Leaderboard(){
+
+        SceneManager.LoadScene("Leaderboard");
+    }
+
     public void QuitGame()
     { //To Quit Out Of The Game
 
