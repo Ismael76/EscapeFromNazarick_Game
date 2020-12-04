@@ -66,11 +66,13 @@ public class EnemyShootPlayer : MonoBehaviour
 
     }
 
+    //Shoots Projectile Using Rigidbody Forces
     public void Shoot()
     {
         shotTime = Time.time;
         Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 6.5f, ForceMode.Impulse);
+        rb.AddForce(transform.up * 5f, ForceMode.Impulse);
     }
+
 }
