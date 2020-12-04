@@ -13,6 +13,8 @@ public class EnemyChase : MonoBehaviour
     
     public int skeletonDamage = 2;
 
+    public GameObject skeletonHitSound;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -61,8 +63,18 @@ public class EnemyChase : MonoBehaviour
 
     public void AttackEnd() {
 
-        Vector3 hitDirection = other.transform.position - transform.position;
-        hitDirection = hitDirection.normalized;
-        FindObjectOfType<PlayerHealth>().PlayerDamaged(skeletonDamage, hitDirection);
+        if (PlayerHealth.isInvincible == false) {
+
+            skeletonHitSound.GetComponent<AudioSource>().Play();
+            Vector3 hitDirection = other.transform.position - transform.position;
+            hitDirection = hitDirection.normalized;
+            FindObjectOfType<PlayerHealth>().PlayerDamaged(skeletonDamage, hitDirection);
+        }
+
+        if (PowerUp3.isUsingPowerUp3 == true)
+        {
+            skeletonHitSound.GetComponent<AudioSource>().Stop();
+            return;
+        }
     }
 }

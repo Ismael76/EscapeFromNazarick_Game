@@ -69,6 +69,8 @@ public class EnemyShootPlayer : MonoBehaviour
     public void Shoot()
     {
         shotTime = Time.time;
-        Instantiate(projectile, transform.position + (player.position - transform.position).normalized, Quaternion.LookRotation(player.position - transform.position));
+        Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+        rb.AddForce(transform.up * 6.5f, ForceMode.Impulse);
     }
 }
