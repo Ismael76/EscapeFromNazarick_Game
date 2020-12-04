@@ -26,11 +26,12 @@ public class TimerController : MonoBehaviour
         
         time += 1 * Time.deltaTime;
 
-        string seconds = (time % 60).ToString("00");
-        string minutes = Mathf.Floor((time % 3600) / 60).ToString("00");
-
         currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
+        
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         if (currentTime < 10) {
 

@@ -8,8 +8,6 @@ public class SaveBestTime : MonoBehaviour
 {
 
     public Text bestTimeText;
-    private static readonly string FirstPlay = "FirstPlay";
-    public static int firstPlayInt;
 
     public float setBestTime;
 
@@ -18,21 +16,21 @@ public class SaveBestTime : MonoBehaviour
     void Start()
     {
 
-        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
-
-        Debug.Log(firstPlayInt);
-
-        if (firstPlayInt == 0)
+        if (PlayerPrefs.HasKey("BestTime[" + level + "]"))
         {
-            //Setting Best Time On First Playthrough
-            bestTimeText.text = "N/A";
-            PlayerPrefs.SetFloat("BestTime[" + level + "]", setBestTime);
-            PlayerPrefs.SetInt(FirstPlay, -1);
+            //Getting Best Recorded Time
+            float minutes = Mathf.FloorToInt(PlayerPrefs.GetFloat("BestTime[" + level + "]") / 60);
+            float seconds = Mathf.FloorToInt(PlayerPrefs.GetFloat("BestTime[" + level + "]") % 60);
+            bestTimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
         }
         else
         {
-            //Getting Best Recorded Time
-            bestTimeText.text = PlayerPrefs.GetFloat("BestTime[" + level + "]").ToString();
+            //Setting Best Time On First Playthrough
+            PlayerPrefs.SetFloat("BestTime[" + level + "]", setBestTime);
+            float minutes = Mathf.FloorToInt(setBestTime / 60);
+            float seconds = Mathf.FloorToInt(setBestTime % 60);
+            bestTimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
 

@@ -7,8 +7,6 @@ public class SceneLoad : MonoBehaviour
 {
     public Animator transitions;
 
-    private int checkIfFirstTime;
-
     public void LoadGame()
     { //To Load The Game & Levels
 
@@ -45,11 +43,6 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadTutorial() {
 
-        if (checkIfFirstTime == 0) {
-
-            SaveBestTime.firstPlayInt = 1;
-        }
-
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
         PlayerHealth.isGameOver = false;
@@ -63,16 +56,10 @@ public class SceneLoad : MonoBehaviour
         PowerUp2.isUsingPowerUp2 = false;
         PowerUp.isUsingPowerUp1 = false;
         SceneManager.LoadScene("Tut Level");
-        checkIfFirstTime ++;
 
     }
 
     public void LoadLevel1() {
-
-         if (checkIfFirstTime == 0) {
-
-            SaveBestTime.firstPlayInt = 1;
-        }
 
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -86,7 +73,6 @@ public class SceneLoad : MonoBehaviour
         PowerUp3.isUsingPowerUp3 = false;
         PowerUp2.isUsingPowerUp2 = false;
         PowerUp.isUsingPowerUp1 = false;
-        SaveBestTime.firstPlayInt = 1;
         SceneManager.LoadScene("Level1");
 
     }
@@ -105,17 +91,11 @@ public class SceneLoad : MonoBehaviour
         PowerUp3.isUsingPowerUp3 = false;
         PowerUp2.isUsingPowerUp2 = false;
         PowerUp.isUsingPowerUp1 = false;
-        SaveBestTime.firstPlayInt = 1;
         SceneManager.LoadScene("Level2");
 
     }
 
     public void LoadLevel3() {
-
-         if (checkIfFirstTime == 0) {
-
-            SaveBestTime.firstPlayInt = 1;
-        }
 
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -130,7 +110,6 @@ public class SceneLoad : MonoBehaviour
         PowerUp2.isUsingPowerUp2 = false;
         PowerUp.isUsingPowerUp1 = false;
         SceneManager.LoadScene("Level3");
-        checkIfFirstTime ++;
 
     }
 
