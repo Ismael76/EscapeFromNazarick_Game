@@ -7,44 +7,42 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
 
-    public Text timerText;
+    public Text countdownText;
 
-    private float startTime;
+    public float startTime;
 
-    private bool finished = false;
+    private float currentTime = 0;
 
-    private string timerValue;
+    public static float time = 0f;
 
     void Start() {
 
-        timerText.text = "00:00.00";
-        startTime = Time.time; //Gives Time Since Beginning Of Game Level
+        currentTime = startTime;
 
     }
 
+    //Counts Down The Time & If It Reaches 0 It Will Display GameOver Screen That Says Time Limit Reached
     void Update() {
+        
+        time += 1 * Time.deltaTime;
 
-        if (finished) {
-            return;
-        } else {
-            float t = Time.time - startTime; //Amount Of Time Since Timer Has Started
+        string seconds = (time % 60).ToString("00");
+        string minutes = Mathf.Floor((time % 3600) / 60).ToString("00");
 
+        currentTime -= 1 * Time.deltaTime;
+        countdownText.text = currentTime.ToString("0");
 
-            //Gives Mins + Secs Of Timer In String Format
-            string minutes = ((int) t / 60).ToString();
-            string seconds = ((t % 60)).ToString("f2");
+        if (currentTime < 10) {
 
-            timerText.text = minutes + ":" + seconds;
+            countdownText.color = Color.red;
         }
+
+        if (currentTime <= 0) {
+
+            currentTime = startTime;
+            FindObjectOfType<PlayerHealth>().GameOver2();
+
+        } 
+        
     }
-
-    public void FinishTimer() {
-        finished = true;
-        timerText.color = Color.yellow;
-        timerValue = timerText.text;
-        PlayerPrefs.SetString("timerValue", timerValue);
-
-    }
-
-    
 }

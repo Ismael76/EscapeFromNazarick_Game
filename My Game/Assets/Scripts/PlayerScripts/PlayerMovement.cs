@@ -110,9 +110,11 @@ public class PlayerMovement : MonoBehaviour
 
             case "JumpPad":
                 jumpForce = 25f;
+                moveSpeed = 7f;
                 break;
             case "SpeedPad":
                 moveSpeed = 15f;
+                jumpForce = 15f;
                 break;
             case "Ground":
                 jumpForce = 15f;

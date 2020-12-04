@@ -11,7 +11,6 @@ public class PlayerHealth : MonoBehaviour
     public int numOfHearts; 
 
     public Image[] hearts; 
-    public Image gems;
     public Sprite fullHeart, emptyHeart; 
 
     public PlayerMovement player;
@@ -26,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     public GameObject gameOver;
+    public GameObject gameOver2;
     public static bool isGameOver;
 
     void Start()
@@ -126,6 +126,16 @@ public class PlayerHealth : MonoBehaviour
     public void GameOver(){
 
         gameOver.SetActive(true);
+        Time.timeScale = 0f;
+        isGameOver = true;
+        isInvincible = false;
+        Cursor.lockState = CursorLockMode.None;
+
+    }
+
+    public void GameOver2(){
+
+        gameOver2.SetActive(true);
         Time.timeScale = 0f;
         isGameOver = true;
         isInvincible = false;

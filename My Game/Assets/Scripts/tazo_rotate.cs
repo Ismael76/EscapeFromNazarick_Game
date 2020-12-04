@@ -10,7 +10,6 @@ public class tazo_rotate : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 				transform.Rotate(rotate_x*Time.deltaTime,rotate_y*Time.deltaTime,rotate_z*Time.deltaTime);
 	}

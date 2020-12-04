@@ -17,7 +17,7 @@ public class TutEnd : MonoBehaviour
     public GameObject panel1;
     public GameObject tutEndSound;
 
-    public Text finishedTimerText;
+    public Text bestTimeText;
     public static bool isTutFinished = false;
 
     void OnTriggerEnter(Collider other)
@@ -38,8 +38,6 @@ public class TutEnd : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         tutEndSound.GetComponent<AudioSource>().Play();
-        GameObject.Find("Timer").SendMessage("FinishTimer");
-        finishedTimerText.text = PlayerPrefs.GetString("timerValue");
 
     }
 }

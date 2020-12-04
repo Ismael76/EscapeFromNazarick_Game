@@ -12,8 +12,6 @@ public class EnemyShootPlayer : MonoBehaviour
 
     public Collider other;
 
-    public int skeletonDamage = 2;
-
     private float shotTime = 0;
     public float timeBetweenShot = 0.5f;
 
