@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
@@ -14,8 +14,8 @@ public class SceneLoad : MonoBehaviour
 
     }
 
-    IEnumerator LoadLevel (int levelIndex) {
-
+    IEnumerator LoadLevel(int levelIndex)
+    {
         PauseMenu.isGamePaused = false;
 
         TutEnd.isTutFinished = false;
@@ -37,11 +37,12 @@ public class SceneLoad : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
 
-        
+
 
     }
 
-    public void LoadTutorial() {
+    public void LoadTutorial()
+    {
 
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -59,7 +60,8 @@ public class SceneLoad : MonoBehaviour
 
     }
 
-    public void LoadLevel1() {
+    public void LoadLevel1()
+    {
 
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -77,7 +79,8 @@ public class SceneLoad : MonoBehaviour
 
     }
 
-    public void LoadLevel2() {
+    public void LoadLevel2()
+    {
 
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -95,7 +98,8 @@ public class SceneLoad : MonoBehaviour
 
     }
 
-    public void LoadLevel3() {
+    public void LoadLevel3()
+    {
 
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -120,14 +124,16 @@ public class SceneLoad : MonoBehaviour
 
     }
 
-    public void SettingsMenu() {
+    public void SettingsMenu()
+    {
 
         SceneManager.LoadScene("SettingMenu");
     }
 
     public void Back()
     {
-        SceneManager.LoadScene("StartMenu");
+
+        SceneManager.LoadScene("MainMenu");
 
     }
 

@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TimerController : MonoBehaviour
 {
 
     public Text countdownText;
+
+    public TextMeshProUGUI completionTime;
 
     public float startTime;
 
@@ -31,7 +34,12 @@ public class TimerController : MonoBehaviour
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
+        float minutes2 = Mathf.FloorToInt(time / 60);
+        float seconds2 = Mathf.FloorToInt(time % 60);
+
         countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        completionTime.text = string.Format("{0:00}:{1:00}", minutes2, seconds2);
 
         if (currentTime < 10) {
 

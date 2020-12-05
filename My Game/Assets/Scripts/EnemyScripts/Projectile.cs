@@ -10,8 +10,10 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") )
         {
+            Destroy(gameObject);
+
             if (PlayerHealth.isInvincible == false)
             {
 
@@ -19,20 +21,20 @@ public class Projectile : MonoBehaviour
                 Vector3 hitDirection = other.transform.position - transform.position;
                 hitDirection = hitDirection.normalized;
                 FindObjectOfType<PlayerHealth>().PlayerDamaged(skeletonMageDamage, hitDirection);
+                Destroy(gameObject);
             }
 
             if (PowerUp3.isUsingPowerUp3 == true)
             {
                 skeletonMageHitSound.GetComponent<AudioSource>().Stop();
-                return;
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
 
         }
-        else if (other.CompareTag("Ground"))
-        {
+
+        if (other.CompareTag("Ground")) {
+
             Destroy(gameObject);
         }
-
     }
 }

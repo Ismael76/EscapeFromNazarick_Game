@@ -7,7 +7,7 @@ public class EnemyChase : MonoBehaviour
 
     public Transform player;
 
-    public static Animator anim;
+    public Animator anim;
 
     public Collider other;
     
@@ -42,7 +42,7 @@ public class EnemyChase : MonoBehaviour
             //Move Enemy Towards Player & Plays Correct Animation
             if(direction.magnitude > 1) {
 
-                this.transform.Translate(0, 0, 0.09f);
+                this.transform.Translate(0, 0, 5f * Time.deltaTime);
                 anim.SetBool("isRunning", true);
                 anim.SetBool("isAttacking", false);
 

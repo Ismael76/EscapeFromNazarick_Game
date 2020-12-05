@@ -8,7 +8,7 @@ public class EnemyShootPlayer : MonoBehaviour
 
     public Transform projectile;
 
-    public static Animator anim;
+    public Animator anim;
 
     public Collider other;
 

@@ -34,10 +34,10 @@ public class SettingsManager : MonoBehaviour
             soundEffectFloat = 0.5f;
             musicSlider.value = musicFloat;
             soundEffectSlider.value = soundEffectFloat;
-            sensitivitySlider.value = CameraMovement.rotationSpeed;
+            sensitivitySlider.value = 5f;
             PlayerPrefs.SetFloat(MusicPref, musicFloat);
             PlayerPrefs.SetFloat(SoundEffectPref, soundEffectFloat);
-            PlayerPrefs.SetFloat(SensitivityPref, CameraMovement.rotationSpeed);
+            PlayerPrefs.SetFloat(SensitivityPref, 5f);
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
 

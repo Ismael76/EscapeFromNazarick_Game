@@ -18,6 +18,7 @@ public class SaveBestTime : MonoBehaviour
 
         if (PlayerPrefs.HasKey("BestTime[" + level + "]"))
         {
+            Debug.Log("Im Here4");
             //Getting Best Recorded Time
             float minutes = Mathf.FloorToInt(PlayerPrefs.GetFloat("BestTime[" + level + "]") / 60);
             float seconds = Mathf.FloorToInt(PlayerPrefs.GetFloat("BestTime[" + level + "]") % 60);
@@ -26,6 +27,7 @@ public class SaveBestTime : MonoBehaviour
         }
         else
         {
+            Debug.Log("Im Here3");
             //Setting Best Time On First Playthrough
             PlayerPrefs.SetFloat("BestTime[" + level + "]", setBestTime);
             float minutes = Mathf.FloorToInt(setBestTime / 60);
@@ -39,12 +41,14 @@ public class SaveBestTime : MonoBehaviour
         //If Current Time Is Smaller Than Currently Saved Time Then It Will Update To Give New Best Time
         if (TimerController.time < PlayerPrefs.GetFloat("BestTime[" + level + "]"))
         {
+            Debug.Log("Im Here");
             float result = Mathf.Round(TimerController.time * 100f) / 100f;
             PlayerPrefs.SetFloat("BestTime[" + level + "]", result);
             TimerController.time = 0f;
         }
         else
         {
+            Debug.Log("Im Here2");
             return;
         }
 

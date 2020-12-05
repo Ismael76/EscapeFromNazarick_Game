@@ -23,6 +23,10 @@ public class PowerUp3 : MonoBehaviour
     }
     IEnumerator PickUp(Collider player)
     {
+        //Applies Power Up To The Player
+        PlayerHealth.invincibilityLength = 15f;
+        isUsingPowerUp3 = true;
+        
         //Effect When Power Up Is Picked Up
         Instantiate(pickUpEffect, transform.position, transform.rotation);
         powerUpSound.GetComponent<AudioSource>().Play();
@@ -34,9 +38,6 @@ public class PowerUp3 : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
-        //Applies Power Up To The Player
-        PlayerHealth.invincibilityLength = 15f;
-        isUsingPowerUp3 = true;
 
         //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
         yield return new WaitForSeconds(15f);
