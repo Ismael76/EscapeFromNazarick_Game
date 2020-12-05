@@ -17,6 +17,7 @@ public class TimerController : MonoBehaviour
     private float currentTime = 0;
 
     public static float time = 0f;
+    public static float time2 = 0f;
 
     void Start() {
 
@@ -26,16 +27,16 @@ public class TimerController : MonoBehaviour
 
     //Counts Down The Time & If It Reaches 0 It Will Display GameOver Screen That Says Time Limit Reached
     void Update() {
-        
-        time += 1 * Time.deltaTime;
+
+        time2 += 1 * Time.deltaTime;
 
         currentTime -= 1 * Time.deltaTime;
         
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
-        float minutes2 = Mathf.FloorToInt(time / 60);
-        float seconds2 = Mathf.FloorToInt(time % 60);
+        float minutes2 = Mathf.FloorToInt(time2 / 60);
+        float seconds2 = Mathf.FloorToInt(time2 % 60);
 
         countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 

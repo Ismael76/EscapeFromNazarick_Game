@@ -13,12 +13,15 @@ public class SaveBestTime : MonoBehaviour
 
     public int level;
 
+    public static float time = 0f;
+
+    public static bool runTimer = true;
+
     void Start()
     {
-
         if (PlayerPrefs.HasKey("BestTime[" + level + "]"))
         {
-            Debug.Log("Im Here4");
+            PlayerPrefs.DeleteAll();
             //Getting Best Recorded Time
             float minutes = Mathf.FloorToInt(PlayerPrefs.GetFloat("BestTime[" + level + "]") / 60);
             float seconds = Mathf.FloorToInt(PlayerPrefs.GetFloat("BestTime[" + level + "]") % 60);
@@ -27,7 +30,6 @@ public class SaveBestTime : MonoBehaviour
         }
         else
         {
-            Debug.Log("Im Here3");
             //Setting Best Time On First Playthrough
             PlayerPrefs.SetFloat("BestTime[" + level + "]", setBestTime);
             float minutes = Mathf.FloorToInt(setBestTime / 60);
@@ -36,19 +38,52 @@ public class SaveBestTime : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (runTimer == true)
+        {
+            time += 1 * Time.deltaTime;
+            Debug.Log(time);
+        }
+
+        if (PlayerHealth.isGameOver == true)
+        {
+
+            time = 0f;
+        }
+        else if (TutEnd.isTutFinished == true)
+        {
+
+            time = 0f;
+        }
+        else if (PauseMenu.isGamePaused == true)
+        {
+
+            runTimer = false;
+        }
+        else if (PauseMenu.isGamePaused == false)
+        {
+            runTimer = true;
+        }
+        else if (OffMapDeath.playerIsOffMap == true)
+        {
+            time = 0f;
+        }
+    }
+
     public void Save()
     {
         //If Current Time Is Smaller Than Currently Saved Time Then It Will Update To Give New Best Time
         if (TimerController.time < PlayerPrefs.GetFloat("BestTime[" + level + "]"))
         {
-            Debug.Log("Im Here");
+            Debug.Log("Im Here1");
             float result = Mathf.Round(TimerController.time * 100f) / 100f;
             PlayerPrefs.SetFloat("BestTime[" + level + "]", result);
             TimerController.time = 0f;
         }
         else
         {
-            Debug.Log("Im Here2");
+            TimerController.time = 0f;
             return;
         }
 
