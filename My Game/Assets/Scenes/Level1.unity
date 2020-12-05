@@ -37634,7 +37634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestTimeText: {fileID: 472059600}
-  setBestTime: 240
+  setBestTime: 180
   level: 1
 --- !u!114 &1830701111
 MonoBehaviour:
@@ -37650,7 +37650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownText: {fileID: 948946015}
   completionTime: {fileID: 670374656}
-  startTime: 240
+  startTime: 180
 --- !u!1 &1845812743
 GameObject:
   m_ObjectHideFlags: 0

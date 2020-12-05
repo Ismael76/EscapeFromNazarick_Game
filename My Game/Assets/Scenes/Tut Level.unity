@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestTimeText: {fileID: 675952238}
-  setBestTime: 120
+  setBestTime: 600
   level: 0
 --- !u!1 &58918131
 GameObject:
