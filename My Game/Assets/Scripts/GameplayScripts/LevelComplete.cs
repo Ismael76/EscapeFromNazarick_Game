@@ -8,6 +8,8 @@ public class LevelComplete : MonoBehaviour
     public GameObject panelEnd;
     public GameObject lvlEndSound;
 
+    public static bool isLevelComplete = false;
+
     void OnTriggerEnter(Collider other)
     {
         panelEnd.SetActive(true);
@@ -15,6 +17,7 @@ public class LevelComplete : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         lvlEndSound.GetComponent<AudioSource>().Play();
         TutEnd.isTutFinished = true;
+        isLevelComplete = true;
 
     }
 

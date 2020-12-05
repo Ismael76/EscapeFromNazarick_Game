@@ -16,7 +16,6 @@ public class SceneLoad : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        TimerController.time2 = 0f;
         PauseMenu.isGamePaused = false;
 
         TutEnd.isTutFinished = false;
@@ -44,7 +43,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadTutorial()
     {
-        TimerController.time2 = 0f;
+        TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
         PlayerHealth.isGameOver = false;
@@ -63,9 +62,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadLevel1()
     {
-
-        SaveBestTime.runTimer = true;
-        TimerController.time2 = 0f;
+        TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
         PlayerHealth.isGameOver = false;
@@ -84,7 +81,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadLevel2()
     {
-        TimerController.time2 = 0f;
+        TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
         PlayerHealth.isGameOver = false;
@@ -103,7 +100,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadLevel3()
     {
-        TimerController.time2 = 0f;
+        TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
         PlayerHealth.isGameOver = false;
@@ -135,7 +132,6 @@ public class SceneLoad : MonoBehaviour
 
     public void Back()
     {
-
         SceneManager.LoadScene("MainMenu");
 
     }
