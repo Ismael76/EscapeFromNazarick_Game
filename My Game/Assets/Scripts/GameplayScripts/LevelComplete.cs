@@ -15,6 +15,7 @@ public class LevelComplete : MonoBehaviour
         panelEnd.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         lvlEndSound.GetComponent<AudioSource>().Play();
         TutEnd.isTutFinished = true;
         isLevelComplete = true;

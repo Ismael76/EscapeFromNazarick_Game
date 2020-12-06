@@ -7,6 +7,10 @@ public class SceneLoad : MonoBehaviour
 {
     public Animator transitions;
 
+    public static bool isLevel3 = false;
+    public static bool isLevel2 = false;
+    public static bool isLevel1 = false;
+
     public void LoadGame()
     { //To Load The Game & Levels
 
@@ -30,6 +34,12 @@ public class SceneLoad : MonoBehaviour
         PowerUp3.isUsingPowerUp3 = false;
         PowerUp2.isUsingPowerUp2 = false;
         PowerUp.isUsingPowerUp1 = false;
+
+        PlayerHealth.invincibilityLength = 2f;
+        PlayerHealth.isInvincible = false;
+        TimerController.time = 0f;
+        Time.timeScale = 1f;
+        CameraMovement.rotationSpeed = 5f;
 
         transitions.SetTrigger("Start");
 

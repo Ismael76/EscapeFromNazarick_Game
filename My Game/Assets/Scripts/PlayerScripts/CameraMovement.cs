@@ -29,6 +29,7 @@ public class CameraMovement : MonoBehaviour
 
 
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void LateUpdate()
@@ -46,10 +47,14 @@ public class CameraMovement : MonoBehaviour
         else if (PlayerHealth.isGameOver == true)
         {
             rotationSpeed = 0f;
-        }
-        else
+        } else if (SceneLoad.isLevel2 == true) {
+
+            rotationSpeed = 5f;
+        } else 
         {
             rotationSpeed = SettingsManager.newSens;
+            Debug.Log(rotationSpeed);
+
         }
 
         pivot.transform.position = target.transform.position;

@@ -11,7 +11,7 @@ public class SettingsManager : MonoBehaviour
     private static readonly string SensitivityPref = "SensitivityPref";
     private int firstPlayInt;
 
-    public static float newSens;
+    public static float newSens = 5f;
 
     public Slider musicSlider, soundEffectSlider, sensitivitySlider;
     private float musicFloat, soundEffectFloat;
@@ -22,7 +22,6 @@ public class SettingsManager : MonoBehaviour
 
     public void Start()
     {
-
         //On First Playthrough It Will Get Initial Slider Values
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
@@ -35,6 +34,7 @@ public class SettingsManager : MonoBehaviour
             musicSlider.value = musicFloat;
             soundEffectSlider.value = soundEffectFloat;
             sensitivitySlider.value = 5f;
+            CameraMovement.rotationSpeed = sensitivitySlider.value;
             PlayerPrefs.SetFloat(MusicPref, musicFloat);
             PlayerPrefs.SetFloat(SoundEffectPref, soundEffectFloat);
             PlayerPrefs.SetFloat(SensitivityPref, 5f);
@@ -96,6 +96,8 @@ public class SettingsManager : MonoBehaviour
         CameraMovement.rotationSpeed = sensitivitySlider.value;
 
         newSens = CameraMovement.rotationSpeed;
+
+        sensitivitySlider.value = newSens;
     }
 
 }

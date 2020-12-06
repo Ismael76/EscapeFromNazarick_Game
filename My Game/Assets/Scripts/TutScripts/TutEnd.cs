@@ -36,6 +36,7 @@ public class TutEnd : MonoBehaviour
         Time.timeScale = 0f;
         isTutFinished = true;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         tutEndSound.GetComponent<AudioSource>().Play();
 

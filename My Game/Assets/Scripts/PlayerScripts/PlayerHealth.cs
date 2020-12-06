@@ -126,20 +126,24 @@ public class PlayerHealth : MonoBehaviour
     public void GameOver(){
 
         gameOver.SetActive(true);
+        invincibilityLength = 2f;
         Time.timeScale = 0f;
         isGameOver = true;
         isInvincible = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 
     public void GameOver2(){
 
         gameOver2.SetActive(true);
+        invincibilityLength = 2f;
         Time.timeScale = 0f;
         isGameOver = true;
         isInvincible = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 
