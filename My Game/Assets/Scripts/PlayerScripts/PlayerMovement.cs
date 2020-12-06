@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             if (controller.isGrounded)
             { 
                 moveDirection.y = 0; 
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown("Jump") || Input.GetButton("Jump"))
                 {
                     moveDirection.y = jumpForce;
                     dJumpCounter = 0;

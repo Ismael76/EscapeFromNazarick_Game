@@ -30,8 +30,8 @@ public class SettingsManager : MonoBehaviour
         if (firstPlayInt == 0)
         {
             //Setting All Initial Values Of Sliders On First Playthrough As Well As When The Player Changes Settings First Time etc...
-            musicFloat = 0.25f;
-            soundEffectFloat = 0.5f;
+            musicFloat = 1f;
+            soundEffectFloat = 1f;
             musicSlider.value = musicFloat;
             soundEffectSlider.value = soundEffectFloat;
             sensitivitySlider.value = 5f;
