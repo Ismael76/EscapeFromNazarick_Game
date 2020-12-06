@@ -8,6 +8,9 @@ TagManager:
   - Ground
   - SpeedPad
   - Enemy
+  - TAZOFX
+  - Fire
+  - npc
   layers:
   - Default
   - TransparentFX
