@@ -43,6 +43,8 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadTutorial()
     {
+        PlayerHealth.invincibilityLength = 2f;
+        PlayerHealth.isInvincible = false;
         TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -62,6 +64,8 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadLevel1()
     {
+        PlayerHealth.invincibilityLength = 2f;
+        PlayerHealth.isInvincible = false;
         TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -81,6 +85,8 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadLevel2()
     {
+        PlayerHealth.invincibilityLength = 2f;
+        PlayerHealth.isInvincible = false;
         TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;
@@ -100,6 +106,8 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadLevel3()
     {
+        PlayerHealth.invincibilityLength = 2f;
+        PlayerHealth.isInvincible = false;
         TimerController.time = 0f;
         Time.timeScale = 1f;
         CameraMovement.rotationSpeed = 5f;

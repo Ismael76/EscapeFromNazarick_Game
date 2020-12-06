@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerMovement player;
 
     public static float invincibilityLength = 2f; 
-    private float invincibilityCounter;
+    public static float invincibilityCounter;
     public static bool isInvincible = false;
 
     public Renderer playerRenderer;

@@ -23,30 +23,60 @@ public class PowerUp3 : MonoBehaviour
     }
     IEnumerator PickUp(Collider player)
     {
+
+        if (PlayerHealth.isInvincible == true) {
+
+            PlayerHealth.invincibilityCounter = 15;
+
+            //Effect When Power Up Is Picked Up
+            Instantiate(pickUpEffect, transform.position, transform.rotation);
+            powerUpSound.GetComponent<AudioSource>().Play();
+
+            //Applies Power Up To The Player
+            PlayerHealth.isInvincible = true;
+            isUsingPowerUp3 = true;
+            PlayerHealth.invincibilityLength = 15f;
+
+            Destroy(bottleEffect1);
+            Destroy(bottleEffect2);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+
+            //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
+            yield return new WaitForSeconds(15f);
+            isUsingPowerUp3 = false;
+            PlayerHealth.isInvincible = false;
+            PlayerHealth.invincibilityLength = 2f;
+
+            //Destroys PowerUp
+            Destroy(gameObject);
+
+        } else {
         
-        //Effect When Power Up Is Picked Up
-        Instantiate(pickUpEffect, transform.position, transform.rotation);
-        powerUpSound.GetComponent<AudioSource>().Play();
+            //Effect When Power Up Is Picked Up
+            Instantiate(pickUpEffect, transform.position, transform.rotation);
+            powerUpSound.GetComponent<AudioSource>().Play();
 
-        //Applies Power Up To The Player
-        PlayerHealth.isInvincible = true;
-        isUsingPowerUp3 = true;
-        PlayerHealth.invincibilityLength = 15f;
+            //Applies Power Up To The Player
+            PlayerHealth.isInvincible = true;
+            isUsingPowerUp3 = true;
+            PlayerHealth.invincibilityLength = 15f;
 
-        //Hides The Powerup, So It Can No Longer Be Obtained
-        Destroy(bottleEffect1);
-        Destroy(bottleEffect2);
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<Collider>().enabled = false;
+            //Hides The Powerup, So It Can No Longer Be Obtained
+            Destroy(bottleEffect1);
+            Destroy(bottleEffect2);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
 
-        //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
-        yield return new WaitForSeconds(15f);
-        isUsingPowerUp3 = false;
-        PlayerHealth.isInvincible = false;
-        PlayerHealth.invincibilityLength = 2f;
+            //Wait x Amount Of Seconds & Then Reverse The Powerup Effect
+            yield return new WaitForSeconds(15f);
+            isUsingPowerUp3 = false;
+            PlayerHealth.isInvincible = false;
+            PlayerHealth.invincibilityLength = 2f;
 
-        //Destroys PowerUp
-        Destroy(gameObject);
+            //Destroys PowerUp
+            Destroy(gameObject);
+        }
 
     }
 }
