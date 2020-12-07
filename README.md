@@ -21,13 +21,11 @@
              Link: https://assetstore.unity.com/packages/2d/textures-materials/sky/tgu-skybox-pack-96433  
    
    
-   Other: Other objects such as crates, barrels, torches & materials for platforms were also taken from the assetstore to provide asthetics for our game.  
+   - Other: Other objects such as crates, barrels, torches & materials for platforms were also taken from the assetstore to provide asthetics for our game.  
       Link: https://assetstore.unity.com/packages/3d/props/exterior/crates-and-barrels-pack-volume-1-free-version-128829  
             https://assetstore.unity.com/packages/3d/environments/dungeons/dungeon-low-poly-toon-battle-arena-tower-defense-pack-109791  
             https://assetstore.unity.com/packages/3d/elemental-magic-totems-59522  
-            https://assetstore.unity.com/packages/2d/textures-materials/roads/stone-floor-texture-tile-18683  
-     
-  *The textures, shaders & materials for all these objects that were used from assetstore above are located in the 'Texture' & 'Material' folder within the 'ThirdParty Assets' folder in the 'Asset' folder.*  
+            https://assetstore.unity.com/packages/2d/textures-materials/roads/stone-floor-texture-tile-18683   
      
   - Game Music & SoundEffects: All Soundtrack & Music was taken from youtube and coverted into mp3 clips that were clipped/shortened to make it fit our game.  
                                Link: https://www.youtube.com/watch?v=qfidRRBhFb4  
@@ -36,7 +34,7 @@
                                https://www.youtube.com/watch?v=ppGaFJ0CY64  
                                https://www.youtube.com/watch?v=0T_NR2KY8uI  
               
- 
+ *The textures, shaders & materials for all these objects that were used from assetstore above are located in the 'Texture' & 'Material' folder within the 'ThirdParty Assets' folder in the 'Asset' folder.*   
  
      
      
