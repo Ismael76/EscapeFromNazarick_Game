@@ -1,7 +1,7 @@
-#*All third party assets that were used in the development of this project are under the 'ThirdParty Assets' folder that can be found in the 'Assets' folder of the project. Everything outside of this folder was created by us.*
+*All third party assets that were used in the development of this project are under the 'ThirdParty Assets' folder that can be found in the 'Assets' folder of the project. Everything outside of this folder was created by us.*
 *No thirdparty scripts were used, everything that was taken from assetstore was mainly for asthetics of our game*
 
-#**Assets Used**
+**Assets Used**
 
   - PowerUp Objects: 3D Model that came with textures and particle effects Link: https://assetstore.unity.com/packages/3d/props/potions-coin-and-box-of-pandora-pack-71778
                       Only the 'Potions' were used as powerup objects
