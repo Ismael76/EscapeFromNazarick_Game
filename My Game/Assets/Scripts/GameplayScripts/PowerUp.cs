@@ -48,7 +48,7 @@ public class PowerUp : MonoBehaviour
         health.playerHealth = 5;
         health.numOfHearts = 5;
         isUsingPowerUp1 = false;
-        
+
         //Destroys PowerUp
         Destroy(gameObject);
 
