@@ -16,7 +16,10 @@
               Link: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
                     https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762  
                     https://assetstore.unity.com/packages/3d/characters/creatures/fantasy-monster-wizard-demo-103037  
-                    
+   
+   - Player: A player model was taken from 'Mixamo' aswell as animations for the player model.  
+             Link: https://www.mixamo.com/#/
+             
    - Skybox: A skybox was taken from the assetstore and edited to our preference.   
              Link: https://assetstore.unity.com/packages/2d/textures-materials/sky/tgu-skybox-pack-96433  
    
